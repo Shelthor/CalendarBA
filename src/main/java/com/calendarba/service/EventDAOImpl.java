@@ -13,7 +13,7 @@ import java.util.List;
 public class EventDAOImpl implements EventDAO {
 
     private SessionFactory sessionFactory;
-    private static final Logger logger = LoggerFactory.getLogger(EventDAOImpl.class);
+    //private static final Logger logger = LoggerFactory.getLogger(EventDAOImpl.class);
 
     public void setSessionFactory(SessionFactory sf){
         this.sessionFactory = sf;
@@ -52,9 +52,9 @@ public class EventDAOImpl implements EventDAO {
     @Override
     public List<Event> listEvents() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Event> eventsList = session.createQuery("from event").list();
+        List<Event> eventsList = session.createQuery("from Event").list();
         for(Event p : eventsList){
-            logger.info("Person List::"+p);
+            //logger.info("Person List::"+p);
         }
         return eventsList;
     }

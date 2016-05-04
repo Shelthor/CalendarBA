@@ -18,7 +18,7 @@ public class EventController {
     private EventService EventService;
 
     @Autowired(required=true)
-    @Qualifier(value="EventService")
+    @Qualifier(value="eventService")
     public void setEventService(EventService ps){
         this.EventService = ps;
     }
