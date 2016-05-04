@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 @Entity
-@Table(name="Event")
+@Table(name="event")
 public class Event {
     @NotEmpty
     @Id
@@ -23,6 +23,7 @@ public class Event {
     private int id;
     @Column(name="Event_name")
     private String name;
+    @Column(name="Event_privat")
     private Boolean privat;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name="Event_start")

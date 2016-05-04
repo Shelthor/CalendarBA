@@ -1,5 +1,7 @@
 package com.calendarba.controller;
 
+
+        import org.apache.log4j.Logger;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.beans.factory.annotation.Qualifier;
         import org.springframework.stereotype.Controller;
@@ -8,9 +10,10 @@ package com.calendarba.controller;
         import org.springframework.web.bind.annotation.PathVariable;
         import org.springframework.web.bind.annotation.RequestMapping;
         import org.springframework.web.bind.annotation.RequestMethod;
-
         import com.calendarba.model.Event;
         import com.calendarba.service.EventService;
+
+        import java.lang.reflect.Field;
 
 @Controller
 public class EventController {
@@ -33,7 +36,7 @@ public class EventController {
     //For add and update Event both
     @RequestMapping(value= "/Event/add", method = RequestMethod.POST)
     public String addEvent(@ModelAttribute("Event") Event p){
-
+        PrintObject(p, Logger.getRootLogger());
         if(p.getId() == 0){
             //new Event, add it
             this.EventService.addEvent(p);
@@ -58,6 +61,39 @@ public class EventController {
         model.addAttribute("Event", this.EventService.getEventById(id));
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";
+    }
+
+    /**
+     * Print all Fields from a specific Object
+     *
+     * @param obj The Object to print
+     * @param log The logger to use for output
+     * @author Steffen
+     */
+
+    public void PrintObject(Object obj, Logger log)
+    {
+        Field[] fields = obj.getClass().getDeclaredFields();
+        log.info("---- Object from Type '" + obj.getClass().getSimpleName() + "' ----");
+        for (Field field : fields)
+        {
+            field.setAccessible(true);
+            String name = field.getName();
+            try
+            {
+                Object value = field.get(obj);
+                log.info(name + ": " + value);
+            } catch (IllegalArgumentException e)
+            {
+                log.info(name + ": ERROR - Illegal Argument");
+                e.printStackTrace();
+            } catch (IllegalAccessException e)
+            {
+                log.info(name + ": ERROR - Illegal Access");
+                e.printStackTrace();
+            }
+        }
+        log.info("---- End Object from Type '" + obj.getClass().getSimpleName() + "' ----");
     }
 
 }

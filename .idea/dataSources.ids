@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - CalendarDB@localhost" uuid="9f97eb9e-8430-4f03-bf74-01903a4b5795">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-info product="MySQL" version="5.7.12-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="calendardb"/>
       <table id="2" parent="1" name="event"/>
@@ -22,7 +26,11 @@
       <column id="6" parent="2" name="Event_name">
         <data-type>varchar(64)</data-type>
       </column>
-      <key id="7" parent="2" name="PRIMARY">
+      <column id="7" parent="2" name="Event_privat">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <key id="8" parent="2" name="PRIMARY">
         <columns>Event_id</columns>
         <primary>1</primary>
       </key>

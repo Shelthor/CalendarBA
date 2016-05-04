@@ -46,12 +46,22 @@
         </tr>
         <tr>
             <td>
-                <form:label path="country">
-                    <spring:message text="Country"/>
+                <form:label path="start">
+                    <spring:message text="Start Date"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="country" />
+                <form:input type="date" path="start" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="end">
+                    <spring:message text="End Date"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input type="date" path="end" />
             </td>
         </tr>
         <tr>
@@ -75,7 +85,6 @@
         <tr>
             <th width="80">Event ID</th>
             <th width="120">Event Name</th>
-            <th width="120">Event Country</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
         </tr>
@@ -83,7 +92,6 @@
             <tr>
                 <td>${Event.id}</td>
                 <td>${Event.name}</td>
-                <td>${Event.country}</td>
                 <td><a href="<c:url value='/edit/${Event.id}' />" >Edit</a></td>
                 <td><a href="<c:url value='/remove/${Event.id}' />" >Delete</a></td>
             </tr>
