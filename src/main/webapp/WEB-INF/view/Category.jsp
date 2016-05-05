@@ -41,12 +41,12 @@
         <tr>
             <td>
                 <form:label path="categoryPrivat">
-                    <spring:message text="Start Date"/>
+                    <spring:message text="Privat"/>
                 </form:label>
             </td>
             <td>
-                <form:radiobutton path="categoryPrivat" value="true"/>
-                <form:radiobutton path="categoryPrivat" value="false"/>
+                <form:radiobutton path="categoryPrivat" value="true" label="privat"/>
+                <form:radiobutton path="categoryPrivat" value="false" label="business"/>
             </td>
         </tr>
 
@@ -80,8 +80,8 @@
                 <td>${Category.categoryId}</td>
                 <td>${Category.categoryName}</td>
                 <td>${Category.categoryPrivat}</td>
-                <td><a href="<c:url value='/edit/${Category.categoryId}' />" >Edit</a></td>
-                <td><a href="<c:url value='/remove/${Category.categoryId}' />" >Delete</a></td>
+                <td><a href="<c:url value='/category/edit/${Category.categoryId}' />" >Edit</a></td>
+                <td><a href="<c:url value='/category/remove/${Category.categoryId}' />" >Delete</a></td>
             </tr>
         </c:forEach>
     </table>

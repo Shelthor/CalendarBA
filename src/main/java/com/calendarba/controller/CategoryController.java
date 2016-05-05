@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -44,7 +45,20 @@ public class CategoryController {
             //existing Event, call update
             this.categoryService.updateCategory(category);
         }
-
         return "redirect:/categorys";
+    }
+
+    @RequestMapping("/category/remove/{id}")
+    public String removeCategory(@PathVariable("id") int id){
+
+        this.categoryService.removeCategory(id);
+        return "redirect:/categorys";
+    }
+
+    @RequestMapping("/category/edit/{id}")
+    public String editEvent(@PathVariable("id") int id, Model model){
+        model.addAttribute("Category", this.categoryService.getCategoryById(id));
+        model.addAttribute("listCategorys", this.categoryService.listCategorys());
+        return "Category";
     }
 }
