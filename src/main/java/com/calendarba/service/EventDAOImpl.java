@@ -53,8 +53,8 @@ public class EventDAOImpl implements EventDAO {
     public List<Event> listEvents() {
         Session session = this.sessionFactory.getCurrentSession();
         List<Event> eventsList = session.createQuery("from Event").list();
-        for(Event p : eventsList){
-            logger.info("Person List::"+p);
+        for(Event event : eventsList){
+            logger.info("Event List::"+ event);
         }
         return eventsList;
     }

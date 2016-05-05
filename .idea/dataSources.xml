@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="171157160">
+  <component name="DataSourceManagerImpl" format="xml" hash="362031226">
     <data-source source="LOCAL" name="MySQL - CalendarDB@localhost" uuid="9f97eb9e-8430-4f03-bf74-01903a4b5795">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

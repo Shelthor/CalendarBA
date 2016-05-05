@@ -17,60 +17,60 @@
     Add a Event
 </h1>
 
-<c:url var="addAction" value="/Event/add" ></c:url>
+<c:url var="addAction" value="/event/add" ></c:url>
 
 <form:form action="${addAction}" commandName="Event">
     <table>
-        <c:if test="${!empty Event.name}">
+        <c:if test="${!empty Event.eventName}">
             <tr>
                 <td>
-                    <form:label path="id">
+                    <form:label path="eventId">
                         <spring:message text="ID"/>
                     </form:label>
                 </td>
                 <td>
-                    <form:input path="id" readonly="true" size="8"  disabled="true" />
-                    <form:hidden path="id" />
+                    <form:input path="eventId" readonly="true" size="8"  disabled="true" />
+                    <form:hidden path="eventId" />
                 </td>
             </tr>
         </c:if>
         <tr>
             <td>
-                <form:label path="name">
-                    <spring:message text="Name"/>
+                <form:label path="eventName">
+                    <spring:message text="eventName"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="name" />
+                <form:input path="eventName" />
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="start">
+                <form:label path="eventStart">
                     <spring:message text="Start Date"/>
                 </form:label>
             </td>
             <td>
-                <form:input type="date" path="start" />
+                <form:input type="date" path="eventStart" />
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="end">
+                <form:label path="eventEnd">
                     <spring:message text="End Date"/>
                 </form:label>
             </td>
             <td>
-                <form:input type="date" path="end" />
+                <form:input type="date" path="eventEnd" />
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <c:if test="${!empty Event.name}">
+                <c:if test="${!empty Event.eventName}">
                     <input type="submit"
                            value="<spring:message text="Edit Event"/>" />
                 </c:if>
-                <c:if test="${empty Event.name}">
+                <c:if test="${empty Event.eventName}">
                     <input type="submit"
                            value="<spring:message text="Add Event"/>" />
                 </c:if>
@@ -85,15 +85,19 @@
         <tr>
             <th width="80">Event ID</th>
             <th width="120">Event Name</th>
+            <<th width="120">Start Date</th>
+            <th width="120">End Date</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
         </tr>
         <c:forEach items="${listEvents}" var="Event">
             <tr>
-                <td>${Event.id}</td>
-                <td>${Event.name}</td>
-                <td><a href="<c:url value='/edit/${Event.id}' />" >Edit</a></td>
-                <td><a href="<c:url value='/remove/${Event.id}' />" >Delete</a></td>
+                <td>${Event.eventId}</td>
+                <td>${Event.eventName}</td>
+                <td>${Event.eventStart}</td>
+                <td>${Event.eventEnd}</td>
+                <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
+                <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
             </tr>
         </c:forEach>
     </table>

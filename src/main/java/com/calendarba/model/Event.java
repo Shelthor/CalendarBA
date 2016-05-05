@@ -20,57 +20,57 @@ public class Event {
     @Id
     @Column(name="Event_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    private int eventId;
     @Column(name="Event_name")
-    private String name;
-    @Column(name="Event_privat")
-    private Boolean privat;
+    private String eventName;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name="Event_start")
-    private Date start;
+    private Date eventStart;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name="Event_end")
-    private Date end;
+    private Date eventEnd;
+    @Column(name="Category_id")
+    private int cId;
 
-    public Event(int id, String name, Boolean privat, int year, int month, int day, int hour, int min){
-        this.id = id;
-        this.name = name;
-        this.privat = privat;
-        this.start = new GregorianCalendar(year, month, day, hour, min , 0).getTime();
-        this.end = new Date();                                                                                          //// Constructor legt hilfsweise Datum von heute an
-    }
     public Event(){}
 
-
-    public String getName(){return this.name;}
-    public Date getStart() { return this.start;}
-    public Date getEnd() {return this.end;}
-    public Boolean getPrivat() {return this.privat;}
-    public int getId() {return this.id;}
-
-
-    public void generateId(){
-        //TODO: per DB-Abfrage die niedrigste verfügbare (oder so) Id ermitteln und ausgeben
-    }
-    public void setId(int id){
-        this.id = id;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setPrivat(Boolean privat) {
-        this.privat = privat;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setStart(Date start) {
-        this.start = start;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
-    public void setEnd(Date end) {
-        this.end = end;
+    public Date getEventStart() {
+        return eventStart;
     }
 
+    public void setEventStart(Date eventStart) {
+        this.eventStart = eventStart;
+    }
 
+    public Date getEventEnd() {
+        return eventEnd;
+    }
+
+    public void setEventEnd(Date eventEnd) {
+        this.eventEnd = eventEnd;
+    }
+
+    public int getcId() {
+        return cId;
+    }
+
+    public void setcId(int cId) {
+        this.cId = cId;
+    }
 }

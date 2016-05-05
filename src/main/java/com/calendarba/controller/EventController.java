@@ -26,7 +26,7 @@ public class EventController {
         this.EventService = ps;
     }
 
-    @RequestMapping(value = "/Events", method = RequestMethod.GET)
+    @RequestMapping(value = "/events", method = RequestMethod.GET)
     public String listEvents(Model model) {
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
@@ -34,7 +34,7 @@ public class EventController {
     }
 
     //For add and update Event both
-    @RequestMapping(value= "/Event/add", method = RequestMethod.POST)
+    @RequestMapping(value= "/event/add", method = RequestMethod.POST)
     public String addEvent(@ModelAttribute("Event") Event p){
         PrintObject(p, Logger.getRootLogger());
         if(p.getId() == 0){
