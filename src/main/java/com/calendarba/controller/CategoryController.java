@@ -28,7 +28,7 @@ public class CategoryController {
     @RequestMapping(value = "/categorys", method = RequestMethod.GET)
     public String listEvents(Model model) {
         model.addAttribute("Category", new Category());
-        model.addAttribute("listEvents", this.categoryService.listCategorys());
+        model.addAttribute("listCategorys", this.categoryService.listCategorys());
         return "Category";
     }
 }
