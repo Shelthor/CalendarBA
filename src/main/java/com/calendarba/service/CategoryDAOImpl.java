@@ -35,14 +35,14 @@ public class CategoryDAOImpl implements CategoryDAO {
     @Override
     public Category getCategoryById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Category p = (Category) session.load(Category.class, new Integer(id));
+        Category p = (Category) session.get(Category.class, new Integer(id));
         return p;
     }
 
     @Override
     public void removeCategory(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Category p = (Category) session.load(Category.class, new Integer(id));
+        Category p = (Category) session.get(Category.class, new Integer(id));
         if(null != p){
             session.delete(p);
         }

@@ -35,14 +35,14 @@ public class EventController {
 
     //For add and update Event both
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
-    public String addEvent(@ModelAttribute("Event") Event p){
-        PrintObject(p, Logger.getRootLogger());
-        if(p.getEventId() == 0){
+    public String addEvent(@ModelAttribute("Event") Event event){
+        PrintObject(event, Logger.getRootLogger());
+        if(event.getEventId() == 0){
             //new Event, add it
-            this.EventService.addEvent(p);
+            this.EventService.addEvent(event);
         }else{
             //existing Event, call update
-            this.EventService.updateEvent(p);
+            this.EventService.updateEvent(event);
         }
 
         return "redirect:/Events";
