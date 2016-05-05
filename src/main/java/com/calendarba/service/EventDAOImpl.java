@@ -35,14 +35,14 @@ public class EventDAOImpl implements EventDAO {
     @Override
     public Event getEventById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Event p = (Event) session.load(Event.class, new Integer(id));
+        Event p = (Event) session.get(Event.class, new Integer(id));
         return p;
     }
 
     @Override
     public void removeEvent(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Event p = (Event) session.load(Event.class, new Integer(id));
+        Event p = (Event) session.get(Event.class, new Integer(id));
         if(null != p){
             session.delete(p);
         }

@@ -28,6 +28,7 @@ public class EventController {
 
     @RequestMapping(value = "/events", method = RequestMethod.GET)
     public String listEvents(Model model) {
+
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";
@@ -35,17 +36,17 @@ public class EventController {
 
     //For add and update Event both
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
-    public String addEvent(@ModelAttribute("Event") Event p){
-        PrintObject(p, Logger.getRootLogger());
-        if(p.getEventId() == 0){
+    public String addEvent(@ModelAttribute("Event") Event event){
+        PrintObject(event, Logger.getRootLogger());
+        if(event.getEventId() == 0){
             //new Event, add it
-            this.EventService.addEvent(p);
+            this.EventService.addEvent(event);
         }else{
             //existing Event, call update
-            this.EventService.updateEvent(p);
+            this.EventService.updateEvent(event);
         }
 
-        return "redirect:/Events";
+        return "redirect:/events";
 
     }
 
@@ -53,11 +54,13 @@ public class EventController {
     public String removeEvent(@PathVariable("id") int id){
 
         this.EventService.removeEvent(id);
-        return "redirect:/Events";
+        return "redirect:/events";
     }
 
     @RequestMapping("/edit/{id}")
     public String editEvent(@PathVariable("id") int id, Model model){
+
+        PrintObject(this.EventService.getEventById(id), Logger.getRootLogger());
         model.addAttribute("Event", this.EventService.getEventById(id));
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";

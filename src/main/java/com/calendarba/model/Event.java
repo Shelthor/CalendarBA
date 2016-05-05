@@ -23,14 +23,14 @@ public class Event {
     private int eventId;
     @Column(name="Event_name")
     private String eventName;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name="Event_start")
     private Date eventStart;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name="Event_end")
     private Date eventEnd;
     @Column(name="Category_id")
-    private int cId;
+    private int categoryId;
 
     public Event(){}
 
@@ -66,11 +66,11 @@ public class Event {
         this.eventEnd = eventEnd;
     }
 
-    public int getcId() {
-        return cId;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setcId(int cId) {
-        this.cId = cId;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
