@@ -20,31 +20,31 @@ public class EventDAOImpl implements EventDAO {
     }
 
     @Override
-    public void addEvent(Event p) {
+    public void addEvent(Event event) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.persist(p);
+        session.persist(event);
     }
 
     @Override
-    public void updateEvent(Event p) {
+    public void updateEvent(Event event) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.update(p);
+        session.update(event);
     }
 
 
     @Override
     public Event getEventById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Event p = (Event) session.load(Event.class, new Integer(id));
-        return p;
+        Event event = (Event) session.get(Event.class, new Integer(id));
+        return event;
     }
 
     @Override
     public void removeEvent(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Event p = (Event) session.load(Event.class, new Integer(id));
-        if(null != p){
-            session.delete(p);
+        Event event = (Event) session.get(Event.class, new Integer(id));
+        if(null != event){
+            session.delete(event);
         }
     }
 

@@ -23,10 +23,10 @@ public class Event {
     private int eventId;
     @Column(name="Event_name")
     private String eventName;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name="Event_start")
     private Date eventStart;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name="Event_end")
     private Date eventEnd;
     @Column(name="Category_id")
