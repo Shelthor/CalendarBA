@@ -37,7 +37,7 @@ public class EventController {
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
     public String addEvent(@ModelAttribute("Event") Event p){
         PrintObject(p, Logger.getRootLogger());
-        if(p.getId() == 0){
+        if(p.getEventId() == 0){
             //new Event, add it
             this.EventService.addEvent(p);
         }else{

@@ -13,39 +13,39 @@ import java.util.List;
 @Service
 public class EventServiceImpl implements EventService {
 
-        private EventDAO EventDAO;
+        private EventDAO eventDAO;
 
-        public void setEventDAO(EventDAO EventDAO) {
-            this.EventDAO = EventDAO;
+        public void setEventDAO(EventDAO eventDAO) {
+            this.eventDAO = eventDAO;
         }
 
         @Override
         @Transactional
         public void addEvent(Event p) {
-            this.EventDAO.addEvent(p);
+            this.eventDAO.addEvent(p);
         }
 
         @Override
         @Transactional
         public void updateEvent(Event p) {
-            this.EventDAO.updateEvent(p);
+            this.eventDAO.updateEvent(p);
         }
 
         @Override
         @Transactional
         public Event getEventById(int id) {
-            return this.EventDAO.getEventById(id);
+            return this.eventDAO.getEventById(id);
         }
 
         @Override
         @Transactional
         public void removeEvent(int id) {
-            this.EventDAO.removeEvent(id);
+            this.eventDAO.removeEvent(id);
         }
 
         @Override
         @Transactional
         public List<Event> listEvents() {
-            return this.EventDAO.listEvents();
+            return this.eventDAO.listEvents();
         }
 }
