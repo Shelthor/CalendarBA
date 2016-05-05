@@ -9,10 +9,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="category")
 public class Category {
-    @NotEmpty
+
     @Id
     @Column(name="Category_id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
     private int categoryId;
     @Column(name="Category_name")
     private String categoryName;

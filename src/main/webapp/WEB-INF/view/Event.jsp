@@ -5,7 +5,6 @@
 <html>
 <head>
     <title>Event Page</title>
-
 </head>
 <body>
 <h1>
