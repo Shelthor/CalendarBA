@@ -52,7 +52,8 @@
         <mandatory>1</mandatory>
         <data-type>varchar(64)</data-type>
       </column>
-      <column id="14" parent="3" name="Category_private">
+      <column id="14" parent="3" name="Category_privat">
+        <mandatory>1</mandatory>
         <data-type>tinyint(1)</data-type>
       </column>
       <key id="15" parent="3" name="PRIMARY">

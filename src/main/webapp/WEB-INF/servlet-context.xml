@@ -41,7 +41,7 @@
         <beans:property name="annotatedClasses">
             <beans:list>
                 <beans:value>com.calendarba.model.Event</beans:value>
-                <beans:value>com.calendarba.model.CalendarMap</beans:value>
+                <beans:value>com.calendarba.model.Category</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">

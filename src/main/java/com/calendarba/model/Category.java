@@ -1,7 +1,6 @@
 package com.calendarba.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
 
 /**
@@ -14,37 +13,37 @@ public class Category {
     @Id
     @Column(name="Category_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int c_id;
+    private int categoryId;
     @Column(name="Category_name")
-    private String name;
+    private String categoryName;
     @Column(name="Category_privat")
-    private Boolean privat;
-    public Category(int c_id, String name, Boolean privat){
-        this.c_id = c_id;
-        this.name = name;
-        this.privat = privat;
+    private Boolean categoryPrivat;
+    public Category(int categoryId, String categoryName, Boolean categoryPrivat){
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+        this.categoryPrivat = categoryPrivat;
     }
     public Category(){}
 
 
-    public String getName(){return this.name;}
-    public Boolean getPrivat() {return this.privat;}
-    public int getId() {return this.c_id;}
+    public String getCategoryName(){return this.categoryName;}
+    public Boolean getCategoryPrivat() {return this.categoryPrivat;}
+    public int getCategoryId() {return this.categoryId;}
 
 
     public void generateId(){
         //TODO: per DB-Abfrage die niedrigste verfügbare (oder so) Id ermitteln und ausgeben
     }
-    public void setId(int c_id){
-        this.c_id = c_id;
+    public void setCategoryId(int id){
+        this.categoryId = id;
     }
 
-    public void setPrivat(Boolean privat) {
-        this.privat = privat;
+    public void setCategoryPrivat(Boolean categoryPrivat) {
+        this.categoryPrivat = categoryPrivat;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryName(String name) {
+        this.categoryName = name;
     }
 
 
