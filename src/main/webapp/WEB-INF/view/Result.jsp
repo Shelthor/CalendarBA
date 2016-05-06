@@ -26,13 +26,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="col-md-4">
-                Hours ${sumHours}
+                Hours: <b>${sumHours}</b>
             </div>
             <div class="col-md-4">
-                Min ${sumMinutes}
+                Min: <b>${sumMinutes}</b>
             </div>
             <div class="col-md-4">
-                Sec ${sumSeconds}
+                Sec: <b>${sumSeconds}</b>
             </div>
         </div>
     </div>
