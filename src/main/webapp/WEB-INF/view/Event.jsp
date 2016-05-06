@@ -9,18 +9,15 @@
     <script src="<c:url value="/resources/moment.js" />"></script>
     <script src="<c:url value="/resources/combodate.js" />"></script>
     <script>
-        $(function(){
+     <%--   $(function(){
             jQuery("#eventStart").combodate();
         });
         $(function(){
             jQuery("#eventEnd").combodate();
-        });
+        }); --%>
     </script>
 </head>
 <body>
-
-
-
 <h1>
     Add a Event
 </h1>
@@ -61,7 +58,7 @@
             <td>
                     <%--  <form:input type="text" path="eventStart"/>
                       --%>
-                      <form:input type="text" path="eventStart" id="eventStart" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
+                      <form:input path="eventStart" id="eventStart" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
 
             </td>
         </tr>
@@ -75,13 +72,13 @@
                     <%--
                     <form:input type="text" path="eventEnd"/>
                      --%>
-                  <form:input type="text" path="eventEnd" id="eventEnd" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
+                  <form:input path="eventEnd" id="eventEnd" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
 
             </td>
         </tr>
         <tr>
             <td>
-                <form input type="select" path="categoryId"></form>
+                <form:input path="categoryId"/>
             </td>
         </tr>
         <tr>

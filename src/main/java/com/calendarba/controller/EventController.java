@@ -4,13 +4,18 @@ package com.calendarba.controller;
         import org.apache.log4j.Logger;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.beans.factory.annotation.Qualifier;
+        import org.springframework.beans.propertyeditors.CustomDateEditor;
         import org.springframework.stereotype.Controller;
         import org.springframework.ui.Model;
+        import org.springframework.web.bind.WebDataBinder;
         import org.springframework.web.bind.annotation.*;
         import com.calendarba.model.Event;
         import com.calendarba.service.EventService;
 
         import java.lang.reflect.Field;
+        import java.text.DateFormat;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
 
 @Controller
 public class EventController {
@@ -23,9 +28,15 @@ public class EventController {
         this.EventService = ps;
     }
 
+    @InitBinder
+    public void customizeConversions(WebDataBinder binder) {
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        df.setLenient(false);
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(df, true));
+    }
+
     @RequestMapping(value = "/events", method = RequestMethod.GET)
     public String listEvents(Model model) {
-
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";
@@ -45,15 +56,6 @@ public class EventController {
         return "redirect:/events";
     }
 
-    @RequestMapping(value= "/event/add/validate", method = RequestMethod.POST)
-    public String addValidateEvent(@RequestBody Event event){
-        PrintObject(event, Logger.getRootLogger());
-        event.getEventName();
-
-        return "/events";
-    }
-
-
     @RequestMapping("/remove/{id}")
     public String removeEvent(@PathVariable("id") int id){
 
@@ -63,8 +65,6 @@ public class EventController {
 
     @RequestMapping("/edit/{id}")
     public String editEvent(@PathVariable("id") int id, Model model){
-
-        PrintObject(this.EventService.getEventById(id), Logger.getRootLogger());
         model.addAttribute("Event", this.EventService.getEventById(id));
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";

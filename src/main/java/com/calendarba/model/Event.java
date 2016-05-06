@@ -16,17 +16,16 @@ import java.util.GregorianCalendar;
 @Entity
 @Table(name="event")
 public class Event {
-    @NotEmpty
+
     @Id
     @Column(name="Event_id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int eventId;
     @Column(name="Event_name")
     private String eventName;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(pattern = "dd.MM.yyyy hh:mm")
     @Column(name="Event_start")
     private Date eventStart;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(pattern = "dd.MM.yyyy hh:mm")
     @Column(name="Event_end")
     private Date eventEnd;
     @Column(name="Category_id")
