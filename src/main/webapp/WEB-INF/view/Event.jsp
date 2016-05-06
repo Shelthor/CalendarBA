@@ -80,6 +80,11 @@
             </td>
         </tr>
         <tr>
+            <td>
+                <form input type="select" path="categoryId"></form>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <c:if test="${!empty Event.eventName}">
                     <input type="submit"
