@@ -11,6 +11,8 @@
     <script src="/resources/moment.js"></script>
     <script src="/resources/combodate.js"></script>
 
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+
     <link href="/resources/css/bootstrap.css" rel="stylesheet">
     <link href="/resources/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/resources/css/custom.css" rel="stylesheet">

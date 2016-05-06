@@ -42,39 +42,41 @@
                         <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
                     </c:if>
                     <c:if test="${empty Category.categoryName}">
-                        <input type="submit"
-                               value="<spring:message text="Add Category"/>" />
+                        <input type="submit" value="<spring:message text="Add Category"/>" style="width:100%" />
                     </c:if>
             </form:form>
-        </div>
-        <br/>
-        <br/>
-        <c:if test="${!empty listCategorys}">
-            <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                <div class="panel-heading">Category List</div>
 
-                    <!-- Table -->
-                    <table class="table">
-                        <tr>
-                            <th class="col-md-2">Category ID</th>
-                            <th class="col-md-3">Category Name</th>
-                            <th class="col-md-2">Privat</th>
-                            <th class="col-md-3"></th>
-                            <th class="col-md-2"></th>
-                        </tr>
-                        <c:forEach items="${listCategorys}" var="Category">
+            <c:if test="${!empty listCategorys}">
+                <div>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Category List</div>
+
+                        <!-- Table -->
+                        <table class="table">
                             <tr>
-                                <td>${Category.categoryId}</td>
-                                <td>${Category.categoryName}</td>
-                                <td>${Category.categoryPrivat}</td>
-                                <td><a href="<c:url value='/category/edit/${Category.categoryId}' />" >Edit</a></td>
-                                <td><a href="<c:url value='/category/remove/${Category.categoryId}' />" >Delete</a></td>
+                                <th class="col-md-2">Category ID</th>
+                                <th class="col-md-3">Category Name</th>
+                                <th class="col-md-2">Privat</th>
+                                <th class="col-md-3"></th>
+                                <th class="col-md-2"></th>
                             </tr>
-                        </c:forEach>
-                    </table>
+                            <c:forEach items="${listCategorys}" var="Category">
+                                <tr>
+                                    <td>${Category.categoryId}</td>
+                                    <td>${Category.categoryName}</td>
+                                    <td>${Category.categoryPrivat}</td>
+                                    <td><a href="<c:url value='/category/edit/${Category.categoryId}' />" >Edit</a></td>
+                                    <td><a href="<c:url value='/category/remove/${Category.categoryId}' />" >Delete</a></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
                 </div>
             </c:if>
+
+        </div>
+
         </div>
     </div>
 </div>
