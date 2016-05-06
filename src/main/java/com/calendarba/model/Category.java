@@ -6,6 +6,7 @@ import javax.persistence.*;
 /**
  * Created by prans on 04.05.2016.
  */
+
 @Entity
 @Table(name="category")
 public class Category {
@@ -16,7 +17,6 @@ public class Category {
     private String categoryName;
     @Column(name="Category_privat")
     private Boolean categoryPrivat;
-
 
     public Category(int categoryId, String categoryName, Boolean categoryPrivat){
         this.categoryId = categoryId;
