@@ -75,10 +75,10 @@
 
                 <div class="col-sm-12">
                     <c:if test="${!empty Event.eventName}">
-                        <input type="submit" value='<spring:message text="Edit Event"/>' style="width: 100%" />
+                        <input type="submit" value="<spring:message text='Edit Event'/>" style="width: 100%" />
                     </c:if>
                     <c:if test="${empty Event.eventName}">
-                        <input type="submit" value='<spring:message text="Add Event"/>' style="width: 100%" />
+                        <input type="submit" value="<spring:message text='Add Event'/>" style="width: 100%" />
                     </c:if>
                 </div>
 

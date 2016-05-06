@@ -70,8 +70,8 @@
                             <th class="col-md-2">Category ID</th>
                             <th class="col-md-3">Category Name</th>
                             <th class="col-md-2">Privat</th>
-                            <th class="col-md-3">Edit</th>
-                            <th class="col-md-2">Delete</th>
+                            <th class="col-md-3"></th>
+                            <th class="col-md-2"></th>
                         </tr>
                         <c:forEach items="${listCategorys}" var="Category">
                             <tr>
