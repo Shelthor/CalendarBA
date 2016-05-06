@@ -6,36 +6,36 @@
         <div class="panel-body">
             <h1>
                 Add a Category
-            </h1
+            </h1>
 
             <c:url var="addAction" value="/category/add" ></c:url>
 
             <form:form action="${addAction}" commandName="Category">
 
-                    <c:if test="${!empty Category.categoryName}">
+                <c:if test="${!empty Category.categoryName}">
 
-                                <form:label path="categoryId">
-                                    <spring:message text="ID"/>
-                                </form:label>
+                    <form:label path="categoryId">
+                        <spring:message text="ID"/>
+                    </form:label>
 
-                                <form:input path="categoryId" readonly="true" size="8"  disabled="true" />
-                                <form:hidden path="categoryId" />
+                    <form:input path="categoryId" readonly="true" size="8"  disabled="true" />
+                    <form:hidden path="categoryId" />
 
-                    </c:if>
+                </c:if>
 
-                    <br/>
+                <br/>
 
 
-                        <div class="col-md-12">
-                            <form:label path="categoryName">
-                                <spring:message text="Name"/>
-                            </form:label>
-                        </div>
+                <div class="col-md-12">
+                    <form:label path="categoryName">
+                        <spring:message text="Name"/>
+                    </form:label>
+                </div>
 
-                        <form:input path="categoryName" style="width: 100%"/>
-                        <br/>
+                <form:input path="categoryName" style="width: 100%"/>
+                <br/>
 
-                        <br/>
+                <br/>
                        <span class="input-group-addon">
                         <form:radiobutton path="categoryPrivat" value="true"/>
                            <p>privat</p>
@@ -44,14 +44,14 @@
                             <form:radiobutton path="categoryPrivat" value="false"/>
                             <p>business</p>
                         </span>
-                        <br/>
+                <br/>
 
-                            <c:if test="${!empty Category.categoryName}">
-                                <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
-                            </c:if>
-                            <c:if test="${empty Category.categoryName}">
-                                <input type="submit" value="<spring:message text="Add Category"/>" style="width: 100%" />
-                            </c:if>
+                <c:if test="${!empty Category.categoryName}">
+                    <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
+                </c:if>
+                <c:if test="${empty Category.categoryName}">
+                    <input type="submit" value="<spring:message text="Add Category"/>" style="width: 100%" />
+                </c:if>
 
             </form:form>
 
