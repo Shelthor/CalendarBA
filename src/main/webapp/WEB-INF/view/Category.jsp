@@ -30,7 +30,7 @@
                     <br/><br/>
 
                     <span class="input-group-addon">
-                        <form:radiobutton path="categoryPrivat" value="true"/>
+                        <form:radiobutton path="categoryPrivat" value="true" checked="checked"/>
                         <p>privat</p>
                     </span>
                     <span class="input-group-addon">
