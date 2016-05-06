@@ -30,7 +30,11 @@ public class EventController {
         this.EventService = ps;
     }
 
-
+    @Autowired(required=true)
+    @Qualifier(value="categoryService")
+    public void setCategoryService(CategoryService categoryService){
+        this.categoryService = categoryService;
+    }
 
     @InitBinder
     public void customizeConversions(WebDataBinder binder) {
@@ -43,7 +47,7 @@ public class EventController {
     public String listEvents(Model model) {
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
-        model.addAttribute("listCategorys",this.categoryService.listCategorys());
+       // model.addAttribute("listCategorys",this.categoryService.listCategorys());
         return "Event";
     }
 
