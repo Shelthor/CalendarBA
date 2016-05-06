@@ -21,8 +21,9 @@ public class EventServiceImpl implements EventService {
 
         @Override
         @Transactional
-        public void addEvent(Event p) {
-            this.eventDAO.addEvent(p);
+        public Boolean addEvent(Event p) {
+            if(this.eventDAO.addEvent(p)) return true;
+            else return false;
         }
 
         @Override

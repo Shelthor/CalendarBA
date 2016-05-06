@@ -30,6 +30,7 @@ public class Event {
     private Date eventEnd;
     @Column(name="Category_id")
     private int categoryId;
+    //TODO:EVENT.Description einfügen
 
     public Event(){}
 
