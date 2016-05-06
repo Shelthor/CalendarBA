@@ -22,10 +22,10 @@ public class Event {
     private int eventId;
     @Column(name="Event_name")
     private String eventName;
-    @DateTimeFormat(pattern = "dd.MM.yyyy hh:mm")
+    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     @Column(name="Event_start")
     private Date eventStart;
-    @DateTimeFormat(pattern = "dd.MM.yyyy hh:mm")
+    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     @Column(name="Event_end")
     private Date eventEnd;
     @Column(name="Category_id")

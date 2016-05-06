@@ -28,9 +28,11 @@ public class EventController {
         this.EventService = ps;
     }
 
+
+
     @InitBinder
     public void customizeConversions(WebDataBinder binder) {
-        DateFormat df = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         df.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(df, true));
     }
