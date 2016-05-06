@@ -16,8 +16,9 @@
 
     <div class="row">
         <h1>
-            Add a Event
+            Add an Event
         </h1>
+
 
         <c:url var="addAction" value="/event/add" />
 <c:if test="${!empty addError}">
@@ -25,68 +26,63 @@
 </c:if>
 <c:url var="addAction" value="/event/add" />
 
+
+
+
         <form:form action="${addAction}" commandName="Event">
-            <table>
+
                 <c:if test="${!empty Event.eventName}">
-                    <tr>
-                        <td>
                             <form:label path="eventId">
                                 <spring:message text="ID"/>
                             </form:label>
-                        </td>
-                        <td>
-                            <form:input path="eventId" readonly="true" size="8"  disabled="true" />
-                            <form:hidden path="eventId" />
-                        </td>
-                    </tr>
                 </c:if>
-                <tr>
-                    <td>
-                        <form:label path="eventName">
-                            <spring:message text="eventName"/>
-                        </form:label>
-                    </td>
-                    <td>
-                        <form:input path="eventName" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="eventStart">
-                            <spring:message text="Start Date"/>
-                        </form:label>
-                    </td>
-                    <td>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Event Name</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form:input path="eventName" cssStyle="width: 100%"/>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Event Start</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
+                            </div>
+                        </div>
+
                             <%--
                                 <form:input type="text" path="eventStart"/>
               --%>
 
-                        <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <form:label path="eventEnd">
-                            <spring:message text="End Date"/>
-                        </form:label>
-                    </td>
-                    <td>
                             <%--
                                                    <form:input type="text" path="eventEnd"/>
 
                                 --%>
-                        <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Event Start</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <p>Category Name (ID)</p>
                         <form:input path="categoryId"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
+
+
                         <c:if test="${!empty Event.eventName}">
                             <input type="submit"
                                    value="<spring:message text="Edit Event"/>" />
@@ -95,34 +91,43 @@
                             <input type="submit"
                                    value="<spring:message text="Add Event"/>" />
                         </c:if>
-                    </td>
-                </tr>
-            </table>
+
         </form:form>
         <br>
         <h3>Events List</h3>
+
         <c:if test="${!empty listEvents}">
-            <table class="tg">
-                <tr>
-                    <th width="80">Event ID</th>
-                    <th width="120">Event Name</th>
-                    <th width="120">Start Date</th>
-                    <th width="120">End Date</th>
-                    <th width="60">Edit</th>
-                    <th width="60">Delete</th>
-                </tr>
-                <c:forEach items="${listEvents}" var="Event">
+
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Category List</div>
+
+                <!-- Table -->
+                <table class="table col-md-12">
                     <tr>
-                        <td>${Event.eventId}</td>
-                        <td>${Event.eventName}</td>
-                        <td>${Event.eventStart}</td>
-                        <td>${Event.eventEnd}</td>
-                        <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
-                        <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
+                        <th class="col-md-2">Event ID</th>
+                        <th class="col-md-2">Event Name</th>
+                        <th class="col-md-2">Start Date</th>
+                        <th class="col-md-2">End Date</th>
+                        <th class="col-md-2">Edit</th>
+                        <th class="col-md-2">Delete</th>
                     </tr>
-                </c:forEach>
-            </table>
+                    <c:forEach items="${listEvents}" var="Event">
+                        <tr>
+                            <td>${Event.eventId}</td>
+                            <td>${Event.eventName}</td>
+                            <td>${Event.eventStart}</td>
+                            <td>${Event.eventEnd}</td>
+                            <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
+                            <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+
         </c:if>
+
+
     </div>
 
 </div>
