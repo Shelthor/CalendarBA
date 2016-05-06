@@ -6,10 +6,7 @@ package com.calendarba.controller;
         import org.springframework.beans.factory.annotation.Qualifier;
         import org.springframework.stereotype.Controller;
         import org.springframework.ui.Model;
-        import org.springframework.web.bind.annotation.ModelAttribute;
-        import org.springframework.web.bind.annotation.PathVariable;
-        import org.springframework.web.bind.annotation.RequestMapping;
-        import org.springframework.web.bind.annotation.RequestMethod;
+        import org.springframework.web.bind.annotation.*;
         import com.calendarba.model.Event;
         import com.calendarba.service.EventService;
 
@@ -28,6 +25,7 @@ public class EventController {
 
     @RequestMapping(value = "/events", method = RequestMethod.GET)
     public String listEvents(Model model) {
+
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";
@@ -44,20 +42,29 @@ public class EventController {
             //existing Event, call update
             this.EventService.updateEvent(event);
         }
-
-        return "redirect:/Events";
-
+        return "redirect:/events";
     }
+
+    @RequestMapping(value= "/event/add/validate", method = RequestMethod.POST)
+    public String addValidateEvent(@RequestBody Event event){
+        PrintObject(event, Logger.getRootLogger());
+        event.getEventName();
+
+        return "/events";
+    }
+
 
     @RequestMapping("/remove/{id}")
     public String removeEvent(@PathVariable("id") int id){
 
         this.EventService.removeEvent(id);
-        return "redirect:/Events";
+        return "redirect:/events";
     }
 
     @RequestMapping("/edit/{id}")
     public String editEvent(@PathVariable("id") int id, Model model){
+
+        PrintObject(this.EventService.getEventById(id), Logger.getRootLogger());
         model.addAttribute("Event", this.EventService.getEventById(id));
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";

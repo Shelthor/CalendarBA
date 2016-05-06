@@ -5,8 +5,22 @@
 <html>
 <head>
     <title>Event Page</title>
+    <script src="<c:url value="/resources/jquery-2.2.3.min.js" />"></script>
+    <script src="<c:url value="/resources/moment.js" />"></script>
+    <script src="<c:url value="/resources/combodate.js" />"></script>
+    <script>
+        $(function(){
+            jQuery("#eventStart").combodate();
+        });
+        $(function(){
+            jQuery("#eventEnd").combodate();
+        });
+    </script>
 </head>
 <body>
+
+
+
 <h1>
     Add a Event
 </h1>
@@ -45,7 +59,10 @@
                 </form:label>
             </td>
             <td>
-                <form:input type="date" path="eventStart" />
+                    <%--  <form:input type="text" path="eventStart"/>
+                      --%>
+                      <form:input type="text" path="eventStart" id="eventStart" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
+
             </td>
         </tr>
         <tr>
@@ -55,7 +72,16 @@
                 </form:label>
             </td>
             <td>
-                <form:input type="date" path="eventEnd" />
+                    <%--
+                    <form:input type="text" path="eventEnd"/>
+                     --%>
+                  <form:input type="text" path="eventEnd" id="eventEnd" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" value=""/>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form input type="select" path="categoryId"></form>
             </td>
         </tr>
         <tr>
@@ -79,7 +105,7 @@
         <tr>
             <th width="80">Event ID</th>
             <th width="120">Event Name</th>
-            <<th width="120">Start Date</th>
+            <th width="120">Start Date</th>
             <th width="120">End Date</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>

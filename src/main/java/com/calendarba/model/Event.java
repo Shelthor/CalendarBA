@@ -30,7 +30,7 @@ public class Event {
     @Column(name="Event_end")
     private Date eventEnd;
     @Column(name="Category_id")
-    private int cId;
+    private int categoryId;
 
     public Event(){}
 
@@ -66,11 +66,11 @@ public class Event {
         this.eventEnd = eventEnd;
     }
 
-    public int getcId() {
-        return cId;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setcId(int cId) {
-        this.cId = cId;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 }
