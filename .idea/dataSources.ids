@@ -18,12 +18,10 @@
       <column id="5" parent="2" name="Event_start">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
-        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
       </column>
       <column id="6" parent="2" name="Event_end">
         <mandatory>1</mandatory>
         <data-type>timestamp</data-type>
-        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
       <column id="7" parent="2" name="Event_name">
         <data-type>varchar(64)</data-type>
