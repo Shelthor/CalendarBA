@@ -53,11 +53,12 @@ public class EventController {
 
     //For add and update Event both
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
-    public String addEvent(@ModelAttribute("Event") Event event){
+    public String addEvent(@ModelAttribute("Event") Event event, Model model){
         PrintObject(event, Logger.getRootLogger());
         if(event.getEventId() == 0){
             //new Event, add it
-            this.EventService.addEvent(event);
+            if(!this.EventService.addEvent(event))
+            {model.addAttribute("addError", new String("could not add Event - 'cause of reasons")) ;}
         }else{
             //existing Event, call update
             this.EventService.updateEvent(event);
@@ -79,13 +80,6 @@ public class EventController {
         return "Event";
     }
 
-    /**
-     * Print all Fields from a specific Object
-     *
-     * @param obj The Object to print
-     * @param log The logger to use for output
-     * @author Steffen
-     */
 
     public void PrintObject(Object obj, Logger log)
     {

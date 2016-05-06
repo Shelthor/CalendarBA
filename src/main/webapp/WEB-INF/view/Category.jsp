@@ -11,58 +11,48 @@
             <c:url var="addAction" value="/category/add" ></c:url>
 
             <form:form action="${addAction}" commandName="Category">
+                    <c:if test="${!empty Category.categoryName}">
+                        <form:label path="categoryId">
+                            <spring:message text="ID"/>
+                        </form:label>
 
-                <c:if test="${!empty Category.categoryName}">
+                        <form:input path="categoryId" readonly="true" size="8"  disabled="true" />
+                        <form:hidden path="categoryId" />
+                    </c:if>
+                    <br/>
+                    <div class="col-md-12">
+                        <form:label path="categoryName">
+                            <spring:message text="Name"/>
+                        </form:label>
+                    </div>
 
-                    <form:label path="categoryId">
-                        <spring:message text="ID"/>
-                    </form:label>
+                    <form:input path="categoryName" style="width: 100%"/>
+                    <br/><br/>
 
-                    <form:input path="categoryId" readonly="true" size="8"  disabled="true" />
-                    <form:hidden path="categoryId" />
-
-                </c:if>
-
-                <br/>
-
-
-                <div class="col-md-12">
-                    <form:label path="categoryName">
-                        <spring:message text="Name"/>
-                    </form:label>
-                </div>
-
-                <form:input path="categoryName" style="width: 100%"/>
-                <br/>
-
-                <br/>
-                       <span class="input-group-addon">
+                    <span class="input-group-addon">
                         <form:radiobutton path="categoryPrivat" value="true"/>
-                           <p>privat</p>
-                        </span>
-                        <span class="input-group-addon">
-                            <form:radiobutton path="categoryPrivat" value="false"/>
-                            <p>business</p>
-                        </span>
-                <br/>
-
-                <c:if test="${!empty Category.categoryName}">
-                    <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
-                </c:if>
-                <c:if test="${empty Category.categoryName}">
-                    <input type="submit" value="<spring:message text="Add Category"/>" style="width: 100%" />
-                </c:if>
-
+                        <p>privat</p>
+                    </span>
+                    <span class="input-group-addon">
+                        <form:radiobutton path="categoryPrivat" value="false"/>
+                        <p>business</p>
+                    </span>
+                    <br/>
+                    <c:if test="${!empty Category.categoryName}">
+                        <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
+                    </c:if>
+                    <c:if test="${empty Category.categoryName}">
+                        <input type="submit"
+                               value="<spring:message text="Add Category"/>" />
+                    </c:if>
             </form:form>
-
-            <br/>
-            <br/>
-            <c:if test="${!empty listCategorys}">
-
-
-                <div class="panel panel-default">
+        </div>
+        <br/>
+        <br/>
+        <c:if test="${!empty listCategorys}">
+            <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading">Category List</div>
+                <div class="panel-heading">Category List</div>
 
                     <!-- Table -->
                     <table class="table">

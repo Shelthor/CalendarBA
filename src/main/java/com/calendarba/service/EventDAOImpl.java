@@ -20,9 +20,27 @@ public class EventDAOImpl implements EventDAO {
     }
 
     @Override
-    public void addEvent(Event event) {
+    public Boolean addEvent(Event event) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.persist(event);
+        List<Event> eventsList = session.createQuery("from Event").list();
+        Boolean correctnessSwitch = true;
+        for(int i=0; i < eventsList.size(); i++){
+            Event testEvent = eventsList.get(i);
+            if(     testEvent.getEventStart().compareTo(event.getEventStart())>=0 && testEvent.getEventEnd().compareTo(event.getEventEnd())<=0   ||
+                    testEvent.getEventStart().compareTo(event.getEventStart())<=0 && testEvent.getEventEnd().compareTo(event.getEventEnd())>=0   ||
+                    testEvent.getEventEnd().compareTo(event.getEventStart())>=0 && testEvent.getEventEnd().compareTo(event.getEventEnd())<=0     ||
+                    testEvent.getEventStart().compareTo(event.getEventStart())>=0 && testEvent.getEventStart().compareTo(event.getEventEnd())<=0 ||
+                    event.getEventStart().compareTo(event.getEventEnd())>0) {
+                correctnessSwitch = false;
+            }
+        }
+        if(correctnessSwitch){
+            session.persist(event);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
