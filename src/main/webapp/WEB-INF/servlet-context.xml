@@ -15,7 +15,7 @@
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving
         up static resources in the ${webappRoot}/resources directory -->
-    <resources mapping="/resources/**" location="${webappRoot}/src/main/resources/" />
+    <resources mapping="/resources/**" location="/resources/" />
 
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources
         in the /WEB-INF/views directory -->
@@ -30,7 +30,7 @@
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <beans:property name="url"
                         value="jdbc:mysql://localhost:3306/CalendarDB" />
-        <beans:property name="username" value="root" />
+        <beans:property name="username" value="calendardbuser" />
         <beans:property name="password" value="calendar" />
     </beans:bean>
 
