@@ -32,7 +32,7 @@
                                 <spring:message text="ID"/>
                             </form:label>
                 </c:if>
-
+                    <div class="col-md-4 col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Event Name</h3>
@@ -41,7 +41,8 @@
                                 <form:input path="eventName" cssStyle="width: 100%"/>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-md-4 col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Event Start</h3>
@@ -50,53 +51,44 @@
                                 <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
                             </div>
                         </div>
-
-                            <%--
-                                <form:input type="text" path="eventStart"/>
-              --%>
-
-
-                            <%--
-                                                   <form:input type="text" path="eventEnd"/>
-
-                                --%>
-
-
+                    </div>
+                    <div class="col-md-4 col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Event Start</h3>
+                                <h3 class="panel-title">Event End</h3>
                             </div>
                             <div class="panel-body">
                                 <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
                             </div>
                         </div>
+                    </div>
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Category Name (ID)</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form:input path="categoryId"/>
+                        </div>
+                    </div>
+                </div>
 
-
-
-
-
-                        <p>Category Name (ID)</p>
-                        <form:input path="categoryId"/>
-
-
-                        <c:if test="${!empty Event.eventName}">
-                            <input type="submit"
-                                   value="<spring:message text="Edit Event"/>" />
-                        </c:if>
-                        <c:if test="${empty Event.eventName}">
-                            <input type="submit"
-                                   value="<spring:message text="Add Event"/>" />
-                        </c:if>
+                <div class="col-sm-12">
+                    <c:if test="${!empty Event.eventName}">
+                        <input type="submit" value='<spring:message text="Edit Event"/>' style="width: 100%" />
+                    </c:if>
+                    <c:if test="${empty Event.eventName}">
+                        <input type="submit" value='<spring:message text="Add Event"/>' style="width: 100%" />
+                    </c:if>
+                </div>
 
         </form:form>
-        <br>
-        <h3>Events List</h3>
-
+        <br/>
         <c:if test="${!empty listEvents}">
 
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Category List</div>
+                <div class="panel-heading">Events List</div>
 
                 <!-- Table -->
                 <table class="table col-md-12">
