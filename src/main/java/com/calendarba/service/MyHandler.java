@@ -44,7 +44,7 @@ package com.calendarba.service;
                 String id = attributes.getValue("id");
                 //initialize event object and set id attribute
                 event = new Event();
-                event.setId(Integer.parseInt(id));
+              //  event.setId(Integer.parseInt(id));
                 //initialize list
                 if (eventList == null && categoryList == null)
                     // Im Beispiel ist <> leer, wenn irgendwas nicht klappt, hier anfangen mit bugfixen
@@ -71,14 +71,14 @@ package com.calendarba.service;
             }
         }
 
-
+/*
         @Override
         public void characters(char ch[], int start, int length) throws SAXException {
 
             if (bEventStart) {
                 //EventStart element, set event EventStart
                 Calendar calEventStart = new GregorianCalendar()
-                event.setEventStart(Date.parse(new String(ch, start, length)));
+               // event.setEventStart(Date.parse(new String(ch, start, length)));
                 bEventStart = false;
             } else if (bEventEnd) {
                 event.setEventEnd(new (ch, start, length));
@@ -91,4 +91,5 @@ package com.calendarba.service;
                 bGender = false;
             }
         }
+        */
     }
