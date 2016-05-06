@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TesterController {
     @RequestMapping(value = "/tester", method = RequestMethod.GET)
     public String listEvents(Model model) {
-        return "Tester";
+    return "Tester";
     }
 }
