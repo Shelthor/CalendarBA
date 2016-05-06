@@ -1,6 +1,7 @@
 package com.calendarba.controller;
 
 
+        import com.calendarba.service.CategoryService;
         import org.apache.log4j.Logger;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,6 +22,7 @@ package com.calendarba.controller;
 public class EventController {
 
     private EventService EventService;
+    private CategoryService categoryService;
 
     @Autowired(required=true)
     @Qualifier(value="eventService")
@@ -41,6 +43,7 @@ public class EventController {
     public String listEvents(Model model) {
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
+        model.addAttribute("listCategorys",this.categoryService.listCategorys());
         return "Event";
     }
 

@@ -109,6 +109,7 @@
 <th width="120">Event Name</th>
 <th width="120">Start Date</th>
 <th width="120">End Date</th>
+    <th width="120">Category Name</th>
 <th width="60">Edit</th>
 <th width="60">Delete</th>
 </tr>
@@ -118,6 +119,7 @@
 <td>${Event.eventName}</td>
 <td>${Event.eventStart}</td>
 <td>${Event.eventEnd}</td>
+    <td>${listCategorys.get(Event.categoryId).categoryName}</td>
 <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
 <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
 </tr>
