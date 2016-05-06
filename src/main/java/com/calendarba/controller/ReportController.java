@@ -43,15 +43,36 @@ public class ReportController {
     @RequestMapping(value = "/reports", method = RequestMethod.GET)
     public String listEvents(Model model) {
         //PrintObject(this.categoryService.listCategorys(), Logger.getRootLogger());
- /*       List<Event> eventListOriginal =  this.eventService.listEvents();
-        ArrayList<String> resultList = new ArrayList<String>();
+        List<Event> eventListOriginal =  this.eventService.listEvents();
+        ArrayList<ArrayList<String>> resultList = new ArrayList<ArrayList<String>>();
         for(int i =0; i<eventListOriginal.size(); i++){
+            ArrayList<String> resultObject = new ArrayList<String>();
             String eventName = eventListOriginal.get(i).getEventName();
+            Boolean nameFound = false;
             for(int j = 0; j < resultList.size(); j++){
-                if(resultList.get(j) == eventName)
+                if(resultList.get(j).get(0) == eventName){
+                    nameFound = true;
+                }
+            }
+            if(!nameFound){
+                resultObject.add(eventName);
+                long sum = 0;
+                for(int k =i; k<eventListOriginal.size(); k++){
+                    if(eventListOriginal.get(k).getEventName() == eventName){
+                        sum +=    eventListOriginal.get(k).getEventEnd().getTime()
+                                - eventListOriginal.get(k).getEventStart().getTime();
+                    }
+                }
+
+                resultObject.add(String.valueOf(sum / (60 * 60 * 1000)));
+                sum = sum % (sum / 60 * 60 * 1000);
+                resultObject.add(String.valueOf(sum / 60 * 1000));
+                sum = sum % (sum / 60 * 1000);
+                resultObject.add(String.valueOf(sum / 1000));
+                resultList.add(resultObject);
             }
         }
-*/
+        model.addAttribute("resultList",resultList);
         model.addAttribute("categorysList", this.categoryService.listCategorys());
 
         return "Reports";
@@ -70,12 +91,16 @@ public class ReportController {
             sum += (eventListOriginal.get(i).getEventEnd().getTime() -
                     eventListOriginal.get(i).getEventStart().getTime());
         }
-        long sumSeconds = sum / 1000;
-        model.addAttribute("sumSeconds", sumSeconds);
-        long sumMinutes = sum / (60 * 1000);
-        model.addAttribute("sumMinutes", sumMinutes);
+
         long sumHours = sum / (60 * 60 * 1000);
         model.addAttribute("sumHours", sumHours);
+        sum = sum % sumHours;
+        long sumMinutes = sum / (60 * 1000);
+        model.addAttribute("sumMinutes", sumMinutes);
+        sum = sum % sumMinutes;
+        long sumSeconds = sum / 1000;
+        model.addAttribute("sumSeconds", sumSeconds);
+
         model.addAttribute("eventList",eventList);
         return "Result";
     }
