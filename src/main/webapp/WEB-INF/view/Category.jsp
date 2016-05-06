@@ -6,60 +6,61 @@
         <div class="panel-body">
             <h1>
                 Add a Category
-            </h1>
+            </h1
 
             <c:url var="addAction" value="/category/add" ></c:url>
 
             <form:form action="${addAction}" commandName="Category">
-                <table>
+
                     <c:if test="${!empty Category.categoryName}">
-                        <tr>
-                            <td>
+
                                 <form:label path="categoryId">
                                     <spring:message text="ID"/>
                                 </form:label>
-                            </td>
-                            <td>
+
                                 <form:input path="categoryId" readonly="true" size="8"  disabled="true" />
                                 <form:hidden path="categoryId" />
-                            </td>
-                        </tr>
+
                     </c:if>
-                    <tr>
-                        <td>
+
+                    <div class="col-md-12">
+
+                        <div class="col-md-12">
                             <form:label path="categoryName">
                                 <spring:message text="Name"/>
                             </form:label>
-                        </td>
-                        <td>
+                        </div>
+                        <div class="col-md-12">
                             <form:input path="categoryName" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form:label path="categoryPrivat">
-                                <spring:message text="Privat"/>
-                            </form:label>
-                        </td>
-                        <td>
-                            <form:radiobutton path="categoryPrivat" value="true" label="privat"/>
-                            <form:radiobutton path="categoryPrivat" value="false" label="business"/>
-                        </td>
-                    </tr>
+                        </div>
 
-                    <tr>
-                        <td colspan="2">
-                            <c:if test="${!empty Category.categoryName}">
-                                <input type="submit"
-                                       value="<spring:message text="Edit Category"/>" />
-                            </c:if>
-                            <c:if test="${empty Category.categoryName}">
-                                <input type="submit"
-                                       value="<spring:message text="Add Category"/>" />
-                            </c:if>
-                        </td>
-                    </tr>
-                </table>
+
+
+
+                            <form:label path="categoryPrivat">
+                                <spring:message text=" "/>
+                            </form:label>
+
+
+                       <span class="input-group-addon">
+                        <form:radiobutton path="categoryPrivat" value="true" label=" privat"/>
+                        </span>
+                                        <span class="input-group-addon">
+                                        <form:radiobutton path="categoryPrivat" value="false" label=" business"/>
+                                            </span>
+
+                        <c:if test="${!empty Category.categoryName}">
+                            <input type="submit"
+                                   value="<spring:message text="Edit Category"/>" />
+                        </c:if>
+                        <c:if test="${empty Category.categoryName}">
+                            <input type="submit"
+                                   value="<spring:message text="Add Category"/>" />
+                        </c:if>
+                    </div>
+
+
+
             </form:form>
             <br>
             <c:if test="${!empty listCategorys}">
