@@ -6,9 +6,9 @@
         <!-- Table -->
         <table class="table">
             <tr>
-                <th class="col-md-2">Category ID</th>
+                <th class="col-md-3">Category ID</th>
                 <th class="col-md-3">Category Name</th>
-                <th class="col-md-2">Privat</th>
+                <th class="col-md-3">Privat</th>
                 <th class="col-md-3">Action</th>
             </tr>
             <c:forEach items="${categorysList}" var="Category">
@@ -28,9 +28,9 @@
         <!-- Table -->
         <table class="table">
             <tr>
-                <th class="col-md-2">Event Name</th>
+                <th class="col-md-3">Event Name</th>
                 <th class="col-md-3">Hours</th>
-                <th class="col-md-2">Min</th>
+                <th class="col-md-3">Min</th>
                 <th class="col-md-3">Sek</th>
             </tr>
             <c:forEach items="${resultList}" var="resultObject">
