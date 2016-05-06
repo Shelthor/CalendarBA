@@ -29,9 +29,9 @@
         <table class="table">
             <tr>
                 <th class="col-md-3">Event Name</th>
+                <th class="col-md-3">Days</th>
                 <th class="col-md-3">Hours</th>
                 <th class="col-md-3">Min</th>
-                <th class="col-md-3">Sek</th>
             </tr>
             <c:forEach items="${resultList}" var="resultObject">
                 <tr>

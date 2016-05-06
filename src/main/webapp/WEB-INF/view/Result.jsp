@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">Catergory Sum</div>
+        <div class="panel-heading">Included Events</div>
 
         <!-- Table -->
         <table class="table">
@@ -26,13 +26,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="col-md-4">
+                Days: <b>${sumDays}</b>
+            </div>
+            <div class="col-md-4">
                 Hours: <b>${sumHours}</b>
             </div>
             <div class="col-md-4">
                 Min: <b>${sumMinutes}</b>
-            </div>
-            <div class="col-md-4">
-                Sec: <b>${sumSeconds}</b>
             </div>
         </div>
     </div>
