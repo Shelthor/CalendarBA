@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VCALENDAR>
+    <Events>
+    <Event id="1">
+        <EventStart>02.03.2014 15:40</EventStart>
+        <EventEnd>02.03.2014 17:00</EventEnd>
+        <EventName>Tennis spielen</EventName>
+        <CategoryId>2</CategoryId>
+    </Event>
+    <Event id="2">
+        <EventStart>03.03.2014 18:00</EventStart>
+        <EventEnd>03.03.2014 19:00</EventEnd>
+        <EventName>Business Dinner</EventName>
+        <CategoryId>3</CategoryId>
+    </Event>
+    <Event id="2">
+        <EventStart>02.03.2014 8:30</EventStart>
+        <EventEnd>02.03.2014 10:30</EventEnd>
+        <EventName>Kundenmeeting</EventName>
+        <CategoryId>5</CategoryId>
+    </Event>
+    <Event id="4">
+        <EventStart>05.03.2014 15:40</EventStart>
+        <EventEnd>05.03.2014 17:00</EventEnd>
+        <EventName>Tennis spielen</EventName>
+        <CategoryId>2</CategoryId>
+    </Event>
+    </Events>
+    <Categorys>
+        <Category id="1">
+            <CategoryName>Sport</CategoryName>
+            <CategoryId>5</CategoryId>
+            <CategoryPrivat>1</CategoryPrivat>
+        </Category>
+        <Category id="2">
+            <CategoryName>Essen gehen</CategoryName>
+            <CategoryId>4</CategoryId>
+            <CategoryPrivat>2</CategoryPrivat>
+        </Category>
+        <Category id="3">
+            <CategoryName>Meeting</CategoryName>
+            <CategoryId>6</CategoryId>
+            <CategoryPrivat>2</CategoryPrivat>
+        </Category>
+    </Categorys>
+</VCALENDAR>
