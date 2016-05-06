@@ -15,21 +15,24 @@
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="5" parent="2" name="Event_start">
+      <column id="5" parent="2" name="Event_name">
         <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-      </column>
-      <column id="6" parent="2" name="Event_end">
-        <mandatory>1</mandatory>
-        <data-type>timestamp</data-type>
-      </column>
-      <column id="7" parent="2" name="Event_name">
         <data-type>varchar(64)</data-type>
+      </column>
+      <column id="6" parent="2" name="Event_start">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="7" parent="2" name="Event_end">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;0000-00-00 00:00:00&apos;</default-expression>
       </column>
       <column id="8" parent="2" name="Category_id">
         <data-type>int(11)</data-type>
       </column>
-      <index id="9" parent="2" name="event_category_Category_id_fk">
+      <index id="9" parent="2" name="fk_category">
         <columns>Category_id</columns>
         <desc-columns></desc-columns>
       </index>
@@ -37,7 +40,7 @@
         <columns>Event_id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="11" parent="2" name="event_category_Category_id_fk">
+      <foreign-key id="11" parent="2" name="fk_category">
         <columns>Category_id</columns>
         <ref-key>~.category.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
