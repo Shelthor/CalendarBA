@@ -13,8 +13,9 @@
 <body>
 
 <div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
 
-    <div class="row">
         <h1>
             Add an Event
         </h1>
@@ -84,9 +85,10 @@
 
         </form:form>
         <br/>
-        <c:if test="${!empty listEvents}">
 
+            <p style="color: #ffffff">.</p>
             <div class="panel panel-default">
+                <c:if test="${!empty listEvents}">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Events List</div>
 
@@ -111,12 +113,12 @@
                         </tr>
                     </c:forEach>
                 </table>
+                </c:if>
             </div>
 
-        </c:if>
 
-
-    </div>
+            </div>
+        </div>
 
 </div>
 
