@@ -19,7 +19,7 @@
 
         <div class="panel panel-default">
             <div class="panel-body">
-                Willkommen ^_^
+                Welcome ^_^
             </div>
         </div>
 

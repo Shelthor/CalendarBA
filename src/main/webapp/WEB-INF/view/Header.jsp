@@ -16,6 +16,8 @@
     <link href="/resources/css/bootstrap.css" rel="stylesheet">
     <link href="/resources/css/bootstrap-theme.css" rel="stylesheet">
     <link href="/resources/css/custom.css" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
 <div class="container">
@@ -39,8 +41,8 @@
 
 
         <div class="jumbotron">
-            <h1>BA Dresden Stechuhr</h1>
-
+            <h1>Time Tracking</h1>
+            <p>Project Failure 133%</p>
         </div>
     </div>
 </div>
