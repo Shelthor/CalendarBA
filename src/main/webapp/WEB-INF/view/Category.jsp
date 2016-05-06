@@ -23,46 +23,40 @@
 
                     </c:if>
 
-                    <div class="col-md-12">
+                    <br/>
+
 
                         <div class="col-md-12">
                             <form:label path="categoryName">
                                 <spring:message text="Name"/>
                             </form:label>
                         </div>
-                        <div class="col-md-12">
-                            <form:input path="categoryName" />
-                        </div>
 
+                        <form:input path="categoryName" style="width: 100%"/>
+                        <br/>
 
-
-
-                            <form:label path="categoryPrivat">
-                                <spring:message text=" "/>
-                            </form:label>
-
-
+                        <br/>
                        <span class="input-group-addon">
-                        <form:radiobutton path="categoryPrivat" value="true" label=" privat"/>
+                        <form:radiobutton path="categoryPrivat" value="true"/>
+                           <p>privat</p>
                         </span>
-                                        <span class="input-group-addon">
-                                        <form:radiobutton path="categoryPrivat" value="false" label=" business"/>
-                                            </span>
+                        <span class="input-group-addon">
+                            <form:radiobutton path="categoryPrivat" value="false"/>
+                            <p>business</p>
+                        </span>
+                        <br/>
 
-                        <c:if test="${!empty Category.categoryName}">
-                            <input type="submit"
-                                   value="<spring:message text="Edit Category"/>" />
-                        </c:if>
-                        <c:if test="${empty Category.categoryName}">
-                            <input type="submit"
-                                   value="<spring:message text="Add Category"/>" />
-                        </c:if>
-                    </div>
-
-
+                            <c:if test="${!empty Category.categoryName}">
+                                <input type="submit" value="<spring:message text="Edit Category"/>" style="width: 100%"/>
+                            </c:if>
+                            <c:if test="${empty Category.categoryName}">
+                                <input type="submit" value="<spring:message text="Add Category"/>" style="width: 100%" />
+                            </c:if>
 
             </form:form>
-            <br>
+
+            <br/>
+            <br/>
             <c:if test="${!empty listCategorys}">
 
 
