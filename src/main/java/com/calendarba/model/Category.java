@@ -16,6 +16,9 @@ public class Category {
     private int categoryId;
     @Column(name="Category_name")
     private String categoryName;
+ /*   @ManyToOne
+    @JoinColumn(name="ID_CATALOG")
+    private Catalog catalog;   um als foreign key zu kennzeichnen*/
     @Column(name="Category_privat")
     private Boolean categoryPrivat;
     public Category(int categoryId, String categoryName, Boolean categoryPrivat){
