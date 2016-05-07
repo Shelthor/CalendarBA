@@ -7,10 +7,10 @@
         <div class="panel-body">
             <div class="col-md-12">
                 <ul class="nav nav-pills">
-                    <li role="presentation"><a href="home">Home</a></li>
+                    <li role="presentation"><a href="/home">Home</a></li>
                     <li role="presentation" class="active"><a href="#">Event</a></li>
-                    <li role="presentation"><a href="categorys">Category</a></li>
-                    <li role="presentation"><a href="reports">Report</a></li>
+                    <li role="presentation"><a href="/categorys">Category</a></li>
+                    <li role="presentation"><a href="/reports">Report</a></li>
                     <li role="presentation"><a href="#">Import</a></li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
                                 <h3 class="panel-title">Event Name</h3>
                             </div>
                             <div class="panel-body">
-                                <form:input path="eventName" cssStyle="width: 100%"/>
+                                <form:input path="eventName" cssStyle="width: 100%" required="required"/>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                 <h3 class="panel-title">Event Start</h3>
                             </div>
                             <div class="panel-body">
-                                <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
+                                <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 <h3 class="panel-title">Event End</h3>
                             </div>
                             <div class="panel-body">
-                                <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm"/>
+                                <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
                             </div>
                         </div>
                     </div>
