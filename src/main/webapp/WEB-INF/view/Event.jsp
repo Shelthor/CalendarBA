@@ -8,6 +8,15 @@
             jQuery("#eventEnd").combodate();
         });
 
+        function sureOrNot(x) {
+            if (confirm("Datensatz wirklich löschen?") == true) {
+                window.location.replace(x);
+            } else {
+                x = "Löschvorgang abgebrochen";
+            }
+
+        }
+
     </script>
 
 <body>
@@ -121,8 +130,8 @@
                             <td>${Event.eventStart}</td>
                             <td>${Event.eventEnd}</td>
                             <td>${Event.categoryId}</td>
+                            <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
                             <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
-                            <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
                         </tr>
                     </c:forEach>
                 </table>
