@@ -43,7 +43,7 @@ public class ReportController {
     @RequestMapping(value = "/reports", method = RequestMethod.GET)
     public String listEvents(Model model) {
         //PrintObject(this.categoryService.listCategorys(), Logger.getRootLogger());
-        List<Event> eventListOriginal =  this.eventService.listEvents();
+ /*       List<Event> eventListOriginal =  this.eventService.listEvents();
         ArrayList<String> resultList = new ArrayList<String>();
         for(int i =0; i<eventListOriginal.size(); i++){
             String eventName = eventListOriginal.get(i).getEventName();
@@ -51,7 +51,7 @@ public class ReportController {
                 if(resultList.get(j) == eventName)
             }
         }
-
+*/
         model.addAttribute("categorysList", this.categoryService.listCategorys());
 
         return "Reports";
