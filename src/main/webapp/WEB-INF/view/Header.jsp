@@ -23,10 +23,14 @@
 <script>
 
     $(function(){
-        jQuery("#eventStart").combodate();
+        jQuery("#eventStart").combodate({
+            maxYear: 2016
+        });
     });
     $(function(){
-        jQuery("#eventEnd").combodate();
+        jQuery("#eventEnd").combodate({
+            maxYear: 2016
+        });
     });
 
     function sureOrNot(x) {
