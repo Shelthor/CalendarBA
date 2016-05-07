@@ -1,18 +1,22 @@
 <%@ include file="/WEB-INF/view/Header.jsp" %>
-    <script>
-
-        $(function(){
-            jQuery("#eventStart").combodate();
-        });
-        $(function(){
-            jQuery("#eventEnd").combodate();
-        });
-
-    </script>
-
 <body>
 
 <div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="home">Home</a></li>
+                    <li role="presentation" class="active"><a href="#">Event</a></li>
+                    <li role="presentation"><a href="categorys">Category</a></li>
+                    <li role="presentation"><a href="reports">Report</a></li>
+                    <li role="presentation"><a href="#">Import</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="panel panel-default">
         <div class="panel-body">
 
@@ -93,21 +97,21 @@
                 <!-- Table -->
                 <table class="table col-md-12">
                     <tr>
-                        <th class="col-md-2">Event ID</th>
                         <th class="col-md-2">Event Name</th>
                         <th class="col-md-2">Start Date</th>
                         <th class="col-md-2">End Date</th>
-                        <th class="col-md-2">Edit</th>
-                        <th class="col-md-2">Delete</th>
+                        <th class="col-md-2">Category ID</th>
+                        <th class="col-md-2"></th>
+                        <th class="col-md-2"></th>
                     </tr>
                     <c:forEach items="${listEvents}" var="Event">
                         <tr>
-                            <td>${Event.eventId}</td>
                             <td>${Event.eventName}</td>
                             <td>${Event.eventStart}</td>
                             <td>${Event.eventEnd}</td>
+                            <td>${Event.categoryId}</td>
+                            <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
                             <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
-                            <td><a href="<c:url value='/remove/${Event.eventId}' />" >Delete</a></td>
                         </tr>
                     </c:forEach>
                 </table>

@@ -1,4 +1,19 @@
 body{
-    background-image: url('/resources/100_4914.jpg');
+    font-family: 'Ubuntu', sans-serif;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
+    background: #a9db80; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #a9db80 0%, #96c56f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #a9db80 0%,#96c56f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #a9db80 0%,#96c56f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.jumbotron{
+    background-image: url('/resources/jumb.jpg');
     background-size: 100% auto;
+
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,1);
 }
