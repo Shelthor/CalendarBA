@@ -23,10 +23,10 @@ public class XMLParserSAX {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
-            MyHandler handlerEvent = new MyHandler();
+            EventXMLHandler handlerEvent = new EventXMLHandler();
             saxParser.parse(new File("/upload/calendarimport.xml"), handlerEvent);
 
-            //MyHandler handlerCategory = new MyHandler();
+            //EventXMLHandler handlerCategory = new EventXMLHandler();
             //saxParser.parse(new);
 
             //Get Employees list

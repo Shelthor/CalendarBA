@@ -15,7 +15,7 @@ package com.calendarba.service;
     import java.util.Date;
     import java.text.SimpleDateFormat;
 
-    public class MyHandler extends DefaultHandler {
+    public class EventXMLHandler extends DefaultHandler {
 
         //List to hold event object
         private List<Event> eventList = null;
