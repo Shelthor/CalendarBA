@@ -31,12 +31,6 @@
 
 
         <form:form action="${addAction}" commandName="Event">
-
-                <c:if test="${!empty Event.eventName}">
-                            <form:label path="eventId">
-                                <spring:message text="ID"/>
-                            </form:label>
-                </c:if>
                     <div class="col-md-4 col-sm-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
