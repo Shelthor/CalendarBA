@@ -63,12 +63,14 @@ public class ReportController {
                                 - eventListOriginal.get(k).getEventStart().getTime();
                     }
                 }
-
-                resultObject.add(String.valueOf((sum / (60 * 60 * 1000))));
-                sum = sum % (sum / 60 * 60 * 1000);
-                resultObject.add(String.valueOf(sum / 60 * 1000));
-                sum = sum % (sum / 60 * 1000);
-                resultObject.add(String.valueOf(sum / 1000));
+                long resultDays = (sum / (24 * 60 * 60 * 1000));
+                resultObject.add(String.valueOf(resultDays));
+                if(resultDays !=0) sum = sum % resultDays;
+                long resultHours = (sum / (60 * 60 * 1000));
+                resultObject.add(String.valueOf(resultHours));
+                if(resultHours !=0)sum = sum % resultHours;
+                long resultMin = sum / (60 * 1000);
+                resultObject.add(String.valueOf(resultMin));
                 resultList.add(resultObject);
             }
         }
