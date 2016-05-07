@@ -64,7 +64,7 @@ public class ReportController {
                     }
                 }
 
-                resultObject.add(String.valueOf(sum / (60 * 60 * 1000)));
+                resultObject.add(String.valueOf((sum / (60 * 60 * 1000))));
                 sum = sum % (sum / 60 * 60 * 1000);
                 resultObject.add(String.valueOf(sum / 60 * 1000));
                 sum = sum % (sum / 60 * 1000);
@@ -94,10 +94,10 @@ public class ReportController {
 
         long sumHours = sum / (60 * 60 * 1000);
         model.addAttribute("sumHours", sumHours);
-        sum = sum % sumHours;
+        if(sumHours != 0) sum = sum % sumHours;
         long sumMinutes = sum / (60 * 1000);
         model.addAttribute("sumMinutes", sumMinutes);
-        sum = sum % sumMinutes;
+        if(sumMinutes != 0)sum = sum % sumMinutes;
         long sumSeconds = sum / 1000;
         model.addAttribute("sumSeconds", sumSeconds);
 
