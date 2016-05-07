@@ -19,3 +19,23 @@
             </tr>
         </c:forEach>
     </table>
+
+    <div class="panel-heading">Category List</div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th class="col-md-2">Event Name</th>
+            <th class="col-md-3">Hours</th>
+            <th class="col-md-2">Min</th>
+            <th class="col-md-3">Sek</th>
+        </tr>
+        <c:forEach items="${resultList}" var="resultObject">
+            <tr>
+                <td>${resultObject[0]}</td>
+                <td>${resultObject[1]}</td>
+                <td>${resultObject[2]}</td>
+                <td>${resultObject[3]}</td>
+            </tr>
+        </c:forEach>
+    </table>
