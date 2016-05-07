@@ -94,14 +94,14 @@ public class ReportController {
                     eventListOriginal.get(i).getEventStart().getTime());
         }
 
+        long sumDays = sum / (24 * 60 * 60 * 1000);
+        model.addAttribute("sumDays", sumDays);
+        if(sumDays != 0) sum = sum % sumDays;
         long sumHours = sum / (60 * 60 * 1000);
         model.addAttribute("sumHours", sumHours);
-        if(sumHours != 0) sum = sum % sumHours;
+        if(sumHours != 0)sum = sum % sumHours;
         long sumMinutes = sum / (60 * 1000);
-        model.addAttribute("sumMinutes", sumMinutes);
-        if(sumMinutes != 0)sum = sum % sumMinutes;
-        long sumSeconds = sum / 1000;
-        model.addAttribute("sumSeconds", sumSeconds);
+        model.addAttribute("sumMin", sumMinutes);
 
         model.addAttribute("eventList",eventList);
         return "Result";

@@ -32,7 +32,7 @@
                 Hours: <b>${sumHours}</b>
             </div>
             <div class="col-md-4">
-                Min: <b>${sumMinutes}</b>
+                Min: <b>${sumMin}</b>
             </div>
         </div>
     </div>
