@@ -52,7 +52,7 @@ public class ReportController {
             Boolean nameFound = false;
             for(int j = 0; j < resultList.size(); j++){
                 PrintObject(resultList.get(j).get(0), Logger.getRootLogger());
-                if(resultList.get(j).get(0) == eventName){
+                if(resultList.get(j).get(0).equals(eventName)){
                     nameFound = true;
                 }
             }
@@ -60,7 +60,7 @@ public class ReportController {
                 resultObject.add(eventName);
                 long sum = 0;
                 for(int k =i; k < eventListOriginal.size(); k++){
-                    if(eventListOriginal.get(k).getEventName() == eventName){
+                    if(eventListOriginal.get(k).getEventName().equals(eventName)){
                         sum +=    eventListOriginal.get(k).getEventEnd().getTime()
                                 - eventListOriginal.get(k).getEventStart().getTime();
                     }

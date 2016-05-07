@@ -47,17 +47,16 @@ public class EventController {
     public String listEvents(Model model) {
         model.addAttribute("Event", new Event());
         model.addAttribute("listEvents", this.EventService.listEvents());
-       // model.addAttribute("listCategorys",this.categoryService.listCategorys());
         return "Event";
     }
 
     //For add and update Event both
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
-    public String addEvent(@ModelAttribute("Event") Event event, Model model){
+    public String addEvent(@ModelAttribute("Event") Event event){
         if(event.getEventId() == 0){
             //new Event, add it
-            if(!this.EventService.addEvent(event))
-            {model.addAttribute("addError", new String("could not add Event - 'cause of reasons")) ;}
+            if(!this.EventService.addEvent(event));
+            //{model.addAttribute("addError", new String("could not add Event - 'cause of reasons")) ;}
         }else{
             //existing Event, call update
             this.EventService.updateEvent(event);
@@ -73,7 +72,7 @@ public class EventController {
     }
 
     @RequestMapping("/edit/{id}")
-    public String editEvent(@PathVariable("id") int id, Model model){
+    public String editEvent(@PathVariable("id") int id, @ModelAttribute("Event") Event event, Model model){
         model.addAttribute("Event", this.EventService.getEventById(id));
         model.addAttribute("listEvents", this.EventService.listEvents());
         return "Event";
