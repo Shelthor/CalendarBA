@@ -11,9 +11,9 @@
     <script src="/resources/moment.js"></script>
     <script src="/resources/combodate.js"></script>
 
-    <link href="resources/css/bootstrap.css" rel="stylesheet">
-    <link href="resources/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="resources/css/custom.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/resources/css/custom.css" rel="stylesheet">
 </head>
 
 <div class="container">

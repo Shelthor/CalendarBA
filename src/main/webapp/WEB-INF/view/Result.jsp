@@ -1,6 +1,5 @@
 <%@ include file="/WEB-INF/view/Header.jsp" %>
 
-<c:url var="Url" value="/reports/show" />
 <div class="panel-heading">Catergory Sum</div>
 
 <!-- Table -->
@@ -11,7 +10,7 @@
         <th class="col-md-2">Event Start</th>
         <th class="col-md-3">Event End</th>
     </tr>
-    <c:forEach items="${eventList}" var="Category">
+    <c:forEach items="${eventList}" var="Event">
         <tr>
             <td>${Event.eventId}</td>
             <td>${Event.eventName}</td>
