@@ -46,10 +46,12 @@ public class ReportController {
         List<Event> eventListOriginal =  this.eventService.listEvents();
         ArrayList<ArrayList<String>> resultList = new ArrayList<ArrayList<String>>();
         for(int i =0; i<eventListOriginal.size(); i++){
+
             ArrayList<String> resultObject = new ArrayList<String>();
             String eventName = eventListOriginal.get(i).getEventName();
             Boolean nameFound = false;
             for(int j = 0; j < resultList.size(); j++){
+                PrintObject(resultList.get(j).get(0), Logger.getRootLogger());
                 if(resultList.get(j).get(0) == eventName){
                     nameFound = true;
                 }
@@ -57,18 +59,18 @@ public class ReportController {
             if(!nameFound){
                 resultObject.add(eventName);
                 long sum = 0;
-                for(int k =i; k<eventListOriginal.size(); k++){
+                for(int k =i; k < eventListOriginal.size(); k++){
                     if(eventListOriginal.get(k).getEventName() == eventName){
                         sum +=    eventListOriginal.get(k).getEventEnd().getTime()
                                 - eventListOriginal.get(k).getEventStart().getTime();
                     }
                 }
-                long resultDays = (sum / (24 * 60 * 60 * 1000));
+                long resultDays = sum / (24 * 60 * 60 * 1000);
                 resultObject.add(String.valueOf(resultDays));
-                if(resultDays !=0) sum = sum % resultDays;
-                long resultHours = (sum / (60 * 60 * 1000));
+                sum = sum % (24 * 60 * 60 * 1000);
+                long resultHours = sum / (60 * 60 * 1000);
                 resultObject.add(String.valueOf(resultHours));
-                if(resultHours !=0)sum = sum % resultHours;
+                sum = sum % ( 60 * 60 * 1000);
                 long resultMin = sum / (60 * 1000);
                 resultObject.add(String.valueOf(resultMin));
                 resultList.add(resultObject);
@@ -96,10 +98,10 @@ public class ReportController {
 
         long sumDays = sum / (24 * 60 * 60 * 1000);
         model.addAttribute("sumDays", sumDays);
-        if(sumDays != 0) sum = sum % sumDays;
+        sum = sum % (24 * 60 * 60 * 1000);
         long sumHours = sum / (60 * 60 * 1000);
         model.addAttribute("sumHours", sumHours);
-        if(sumHours != 0)sum = sum % sumHours;
+        if(sumHours != 0)sum = sum % (60 * 60 * 1000);
         long sumMinutes = sum / (60 * 1000);
         model.addAttribute("sumMin", sumMinutes);
 

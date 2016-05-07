@@ -54,7 +54,6 @@ public class EventController {
     //For add and update Event both
     @RequestMapping(value= "/event/add", method = RequestMethod.POST)
     public String addEvent(@ModelAttribute("Event") Event event, Model model){
-        PrintObject(event, Logger.getRootLogger());
         if(event.getEventId() == 0){
             //new Event, add it
             if(!this.EventService.addEvent(event))
@@ -80,30 +79,5 @@ public class EventController {
         return "Event";
     }
 
-
-    public void PrintObject(Object obj, Logger log)
-    {
-        Field[] fields = obj.getClass().getDeclaredFields();
-        log.info("---- Object from Type '" + obj.getClass().getSimpleName() + "' ----");
-        for (Field field : fields)
-        {
-            field.setAccessible(true);
-            String name = field.getName();
-            try
-            {
-                Object value = field.get(obj);
-                log.info(name + ": " + value);
-            } catch (IllegalArgumentException e)
-            {
-                log.info(name + ": ERROR - Illegal Argument");
-                e.printStackTrace();
-            } catch (IllegalAccessException e)
-            {
-                log.info(name + ": ERROR - Illegal Access");
-                e.printStackTrace();
-            }
-        }
-        log.info("---- End Object from Type '" + obj.getClass().getSimpleName() + "' ----");
-    }
 
 }
