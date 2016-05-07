@@ -24,12 +24,14 @@
 
     $(function(){
         jQuery("#eventStart").combodate({
-            maxYear: 2016
+            minYear: 2000,
+            maxYear: 2020
         });
     });
     $(function(){
         jQuery("#eventEnd").combodate({
-            maxYear: 2016
+            minYear: 2000,
+            maxYear: 2020
         });
     });
 
