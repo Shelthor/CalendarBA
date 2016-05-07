@@ -82,7 +82,8 @@
                                     <td>${Category.categoryName}</td>
                                     <td>${Category.categoryPrivat}</td>
                                     <td><a href="<c:url value='/category/edit/${Category.categoryId}' />" >Edit</a></td>
-                                    <td><a href="<c:url value='/category/remove/${Category.categoryId}' />" >Delete</a></td>
+
+                                    <td><a onclick="sureOrNot('<c:url value='/category/remove/${Category.categoryId}' />');">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>

@@ -20,6 +20,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 
+<script>
+
+    $(function(){
+        jQuery("#eventStart").combodate();
+    });
+    $(function(){
+        jQuery("#eventEnd").combodate();
+    });
+
+    function sureOrNot(x) {
+        if (confirm("Datensatz wirklich löschen?") == true) {
+            window.location.replace(x);
+        } else {
+            x = "Löschvorgang abgebrochen";
+        }
+
+    }
+</script>
+
 <div class="container">
     <div class="row">
         <div class="jumbotron">

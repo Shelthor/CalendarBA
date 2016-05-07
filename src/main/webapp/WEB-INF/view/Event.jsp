@@ -1,24 +1,4 @@
 <%@ include file="/WEB-INF/view/Header.jsp" %>
-    <script>
-
-        $(function(){
-            jQuery("#eventStart").combodate();
-        });
-        $(function(){
-            jQuery("#eventEnd").combodate();
-        });
-
-        function sureOrNot(x) {
-            if (confirm("Datensatz wirklich löschen?") == true) {
-                window.location.replace(x);
-            } else {
-                x = "Löschvorgang abgebrochen";
-            }
-
-        }
-
-    </script>
-
 <body>
 
 <div class="container">
