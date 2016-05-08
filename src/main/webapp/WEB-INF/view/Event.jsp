@@ -20,51 +20,51 @@
     <div class="panel panel-default">
         <div class="panel-body">
 
-        <h1>
-            Add an Event
-        </h1>
+            <h1>
+                Add an Event
+            </h1>
 
 
-        <c:url var="addAction" value="/event/add" />
-<c:if test="${!empty addError}">
-    <spring:message text="${addError}" />
-</c:if>
-<c:url var="addAction" value="/event/add" />
+            <c:url var="addAction" value="/event/add" />
+            <c:if test="${!empty addError}">
+                <spring:message text="${addError}" />
+            </c:if>
+            <c:url var="addAction" value="/event/add" />
 
 
 
 
-        <form:form action="${addAction}" commandName="Event">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Event Name</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form:input path="eventName" cssStyle="width: 100%" required="required"/>
-                            </div>
+            <form:form action="${addAction}" commandName="Event">
+                <div class="col-md-4 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Event Name</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form:input path="eventName" cssStyle="width: 100%" required="required"/>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Event Start</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
-                            </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Event Start</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form:input path="eventStart" id="eventStart" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Event End</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
-                            </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Event End</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form:input path="eventEnd" id="eventEnd" data-format="DD.MM.YYYY HH:mm" data-template="DD / MM / YYYY HH : mm" required="required"/>
                         </div>
                     </div>
+                </div>
                 <div class="col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -85,42 +85,42 @@
                     </c:if>
                 </div>
 
-        </form:form>
-        <br/>
+            </form:form>
+            <br/>
 
             <p style="color: #ffffff">.</p>
             <div class="panel panel-default">
                 <c:if test="${!empty listEvents}">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Events List</div>
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Events List</div>
 
-                <!-- Table -->
-                <table class="table col-md-12">
-                    <tr>
-                        <th class="col-md-2">Event Name</th>
-                        <th class="col-md-2">Start Date</th>
-                        <th class="col-md-2">End Date</th>
-                        <th class="col-md-2">Category ID</th>
-                        <th class="col-md-2"></th>
-                        <th class="col-md-2"></th>
-                    </tr>
-                    <c:forEach items="${listEvents}" var="Event">
+                    <!-- Table -->
+                    <table class="table col-md-12">
                         <tr>
-                            <td>${Event.eventName}</td>
-                            <td>${Event.eventStart}</td>
-                            <td>${Event.eventEnd}</td>
-                            <td>${Event.categoryId}</td>
-                            <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
-                            <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
+                            <th class="col-md-2">Event Name</th>
+                            <th class="col-md-2">Start Date</th>
+                            <th class="col-md-2">End Date</th>
+                            <th class="col-md-2">Category ID</th>
+                            <th class="col-md-2"></th>
+                            <th class="col-md-2"></th>
                         </tr>
-                    </c:forEach>
-                </table>
+                        <c:forEach items="${listEvents}" var="Event">
+                            <tr>
+                                <td>${Event.eventName}</td>
+                                <td>${Event.eventStart}</td>
+                                <td>${Event.eventEnd}</td>
+                                <td>${Event.categoryId}</td>
+                                <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
+                                <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
                 </c:if>
             </div>
 
 
-            </div>
         </div>
+    </div>
 
 </div>
 </body>

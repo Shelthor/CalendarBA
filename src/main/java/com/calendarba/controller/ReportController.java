@@ -1,27 +1,19 @@
 package com.calendarba.controller;
 
-import com.calendarba.model.Category;
 import com.calendarba.model.Event;
 import com.calendarba.service.CategoryService;
 import com.calendarba.service.EventService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-/**
- * Created by prans on 06.05.2016.
- */
 @Controller
 public class ReportController {
 
@@ -51,7 +43,6 @@ public class ReportController {
             String eventName = eventListOriginal.get(i).getEventName();
             Boolean nameFound = false;
             for(int j = 0; j < resultList.size(); j++){
-                PrintObject(resultList.get(j).get(0), Logger.getRootLogger());
                 if(resultList.get(j).get(0).equals(eventName)){
                     nameFound = true;
                 }
@@ -90,7 +81,6 @@ public class ReportController {
         for(int i =0; i<eventListOriginal.size(); i++){
             if(eventListOriginal.get(i).getCategoryId() == id){
                 eventList.add(eventListOriginal.get(i));
-                PrintObject(eventListOriginal.get(i), Logger.getRootLogger());
             }
             sum += (eventListOriginal.get(i).getEventEnd().getTime() -
                     eventListOriginal.get(i).getEventStart().getTime());
@@ -108,32 +98,5 @@ public class ReportController {
         model.addAttribute("eventList",eventList);
         return "Result";
     }
-
-
-    public void PrintObject(Object obj, Logger log)
-    {
-        Field[] fields = obj.getClass().getDeclaredFields();
-        log.info("---- Object from Type '" + obj.getClass().getSimpleName() + "' ----");
-        for (Field field : fields)
-        {
-            field.setAccessible(true);
-            String name = field.getName();
-            try
-            {
-                Object value = field.get(obj);
-                log.info(name + ": " + value);
-            } catch (IllegalArgumentException e)
-            {
-                log.info(name + ": ERROR - Illegal Argument");
-                e.printStackTrace();
-            } catch (IllegalAccessException e)
-            {
-                log.info(name + ": ERROR - Illegal Access");
-                e.printStackTrace();
-            }
-        }
-        log.info("---- End Object from Type '" + obj.getClass().getSimpleName() + "' ----");
-    }
-
 }
 

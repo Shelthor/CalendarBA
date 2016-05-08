@@ -6,10 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
-/**
- * Created by prans on 02.05.2016.
- */
 @Service
 public class EventServiceImpl implements EventService {
 

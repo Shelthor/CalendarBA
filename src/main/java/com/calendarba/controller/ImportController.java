@@ -15,9 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by Andreas Geißler on 07.05.2016.
- */
 @Controller
 public class ImportController {
 
