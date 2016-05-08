@@ -1,8 +1,6 @@
 <%@ include file="/WEB-INF/view/Header.jsp" %>
-
-
 <div class="container">
-
+    <div class="ct-chart ct-perfect-fourth"></div>
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="col-md-12">
@@ -18,6 +16,7 @@
     </div>
 
     <div class="panel panel-default">
+
         <div class="panel-heading">Included Events</div>
 
         <!-- Table -->
@@ -51,6 +50,8 @@
             </div>
         </div>
     </div>
+
+
     <td><a href="<c:url value='/reports/' />" >Back</a></td>
 
     </div>

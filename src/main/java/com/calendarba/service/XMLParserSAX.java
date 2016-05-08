@@ -1,20 +1,15 @@
 package com.calendarba.service;
 
-/**
- * Created by Andreas Geißler on 07.05.2016.
- */
-
-
-        import java.io.File;
-        import java.io.IOException;
-        import java.util.List;
-
-        import javax.xml.parsers.ParserConfigurationException;
-        import javax.xml.parsers.SAXParser;
-        import javax.xml.parsers.SAXParserFactory;
 
         import com.calendarba.model.Event;
-        import org.xml.sax.SAXException;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 
 public class XMLParserSAX {
