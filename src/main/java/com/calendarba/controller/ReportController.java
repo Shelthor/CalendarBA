@@ -79,11 +79,11 @@ public class ReportController {
         List<Event> eventList = new ArrayList<Event>();
         long sum =0;
         for(int i =0; i<eventListOriginal.size(); i++){
-            if(eventListOriginal.get(i).getCategoryId() == Integer.valueOf(id)){
+            if(eventListOriginal.get(i).getCategoryId() == Integer.valueOf(id)) {
                 eventList.add(eventListOriginal.get(i));
+                sum += (eventListOriginal.get(i).getEventEnd().getTime() -
+                        eventListOriginal.get(i).getEventStart().getTime());
             }
-            sum += (eventListOriginal.get(i).getEventEnd().getTime() -
-                    eventListOriginal.get(i).getEventStart().getTime());
         }
 
         long sumDays = sum / (24 * 60 * 60 * 1000);
