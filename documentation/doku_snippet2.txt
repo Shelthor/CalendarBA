@@ -1,0 +1,40 @@
+5. Implementierung
+
+Funktional wurde ein Großteil der Anforderungen umgesetzt. Die vorliegende Applikation realisiert sowohl die 
+Abbildung der Events und Kategorien inklusive der grundlegenden Bearbeitungsmöglichkeiten, als auch deren 
+Persistierung. Es können tabellarische Auswertungen vorgenommen werden, allerdings fehlt die Möglichkeit der 
+grafischen Darstellung dieser Reports. Die Importfunktionalität ist zwar angelegt, jedoch nicht 
+praktisch nutzbar.
+
+Auf Basis der Überlegungen bzgl. der nichtfunktionalen Anforderungen [Nummer Kapitel] soll im Folgenden eine kurze Bewertung
+ der vorliegenden Implementierung vorgenommen werden.
+
+Einige Qualitätsmerkmale werden durch die prinzipielle Wahl der Werkzeuge befördert, z.B. gewährleistet die 
+Nutzung von Java durch die clientseitige Ausführung der Applikation die Portabilität auf verschiedene 
+Betriebssystem bzw. Rechnerarchitekturen. Als weiteres Beispiel erhöht allein die konsequente Nutzung von Bootstrap 
+die Wartbarkeit der Views / Anzeige. Allerdings birgt die Nutzung der gewählten Werkzeuge auch Nachteile. 
+So ist der Umfang der Applikation für die Anzahl der zur Verfügung gestellten Funktionen sehr hoch, da 
+durch die Nutzung des Frameworks Spring viele im Projekt ungenutzte Bibliotheken zur Verfügung 
+gestellt werden. Selbiges gilt für die Performance. Es lässt sich feststellen, dass die Nutzung von Spring 
+auf technischer Ebene erst bei einem gewissen Funktionsumfang der Applikation effektiv ist. Allerdings ist 
+das Aufkommen an Rechenleistung und Datenvolumen der implementierten Lösung so gering, dass die geringe 
+in der Bearbeitung nicht relevant ist.
+
+Die Ausprägung von weiteren Qualitätsmerkmalen wird durch die im Entwurf festgelegten Struktur definiert. So erhöht etwa 
+Strukturierung der Persistierung in verschieden Layer die Sicherheit und Erweiterbarkeit. Ebenso kann ein hoher Grad an 
+Modularität, der die spätere Erweiterung und Wartung der Applikation erhöht, nur durch geeignete Strukturierung der 
+Komponenten erreicht werden. Hier wurde im Entwurf über die Zuordnung der einzelnen Klassen zu 3 Packages der Grundstein 
+für eine logische Kapselung der Funktionalitäten gelegt, und ein akzeptables Maß an Modularität erzeugt. 
+
+Weiterhin werden die Qualitätsmerkmale direkt durch die Umsetzung des Entwurfes bestimmt. Hier beeinflusst beispielsweise 
+die Wahl der Bezeichner (Variablen, Klassen, Datenbankobjekte etc.) direkt die Les- und somit die Wart- sowie Testbarkeit  
+des Programmcodes. Wir haben hier eine Namenskonvention im Format CamelCase genutzt. Eine bessere Dokumentation des 
+Quelltextes durch Kommentare und Klassen- bzw Methodenbeschreibungen wäre an dieser Stelle ebenfalls wünschenswert gewesen. 
+ 
+#Andi: Test und Exception
+
+Insgesamt ist festzustellen, dass die vorliegende Implementierung zum Teil unausgereift ist, was hauptsächlich auf 
+die kurze Zeitvorgabe für die Entwicklung zurückzuführen ist, es ist festzuhalten, dass für Entwurf, Umsetzung und Dokumentation 
+nur etwa 2/3 der Zeit im Vergleich zur Erstprüfung zur Verfügung standen. Dennoch entspricht die Applikation, zumindest was den 
+ Aufbau betrifft, dem aktuellen Stand der Technik im Bereich der einfachen Webanwendungen. Vor Allem die Integration von 
+Elementen unterschiedlicher Sprachen/Techniken (Java, JSTL, JS, CSS) wurde hier aus Sicht der Entwickler zufriedenstellend umgesetzt.

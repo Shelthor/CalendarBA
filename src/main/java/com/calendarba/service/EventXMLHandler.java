@@ -18,22 +18,11 @@ import java.util.Locale;
         private List<Event> eventList = null;
         private Event event = null;
 
-        //Category gedöhns
-        /*
-        //List to hold category object
-        private List<Category> categoryList = null;
-        private Category category = null;
-*/
         //getter method for event list
         public List<Event> getEventList() {
             return eventList;
         }
-/*
-        //getter method for category list
-        public List<Category> getCategoryList(){
-            return categoryList;
-        }
-*/
+
         boolean bEventStart = false;
         boolean bEventEnd = false;
         boolean bEventName = false;
@@ -44,18 +33,13 @@ import java.util.Locale;
                 throws SAXException {
 
             if (qName.equalsIgnoreCase("event")) {
-                //create a new event and put it in Map
-                String id = attributes.getValue("id");
                 //initialize event object and set id attribute
                 event = new Event();
-              //  event.setId(Integer.parseInt(id));
                 //initialize list
                 if (eventList == null)
-                    // Im Beispiel ist <> leer, wenn irgendwas nicht klappt, hier anfangen mit bugfixen
+
                     eventList = new ArrayList<Event>();
-                    //categoryList = new ArrayList<Category>();
             } else if (qName.equalsIgnoreCase("EventStart")) {
-                //set boolean values for fields, will be used in setting event variables
                 bEventStart = true;
             } else if (qName.equalsIgnoreCase("EventEnd")) {
                 bEventEnd = true;
