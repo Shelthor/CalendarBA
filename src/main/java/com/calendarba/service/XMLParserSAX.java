@@ -26,13 +26,13 @@ public class XMLParserSAX {
             EventXMLHandler handlerEvent = new EventXMLHandler();
             saxParser.parse(new File("/upload/calendarimport.xml"), handlerEvent);
 
-            //EventXMLHandler handlerCategory = new EventXMLHandler();
-            //saxParser.parse(new);
-
-            //Get Employees list
             List<Event> eventList = handlerEvent.getEventList();
-            //print employee information
+
             for(Event event : eventList)
+                //TODO:
+                //Daten aus dem Model per Hibernate in die Datenbank persistieren
+
+                //Daten ausgeben
                 System.out.println(event);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
