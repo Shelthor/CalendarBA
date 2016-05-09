@@ -1,13 +1,6 @@
 package com.calendarba.service;
 
-/**
- * Created by prans on 02.05.2016.
- */
-
-
 import com.calendarba.model.Event;
-import org.hibernate.SessionFactory;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 import java.util.List;
 

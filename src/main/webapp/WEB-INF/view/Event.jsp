@@ -89,35 +89,36 @@
         <br/>
 
             <p style="color: #ffffff">.</p>
+            <div class="col-md-12">
             <div class="panel panel-default">
                 <c:if test="${!empty listEvents}">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Events List</div>
+                        <!-- Table -->
+                        <table class="table col-md-12">
+                            <tr>
+                                <th class="col-md-2">Event Name</th>
+                                <th class="col-md-2">Start Date</th>
+                                <th class="col-md-2">End Date</th>
+                                <th class="col-md-2">Category ID</th>
+                                <th class="col-md-2"></th>
+                                <th class="col-md-2"></th>
+                            </tr>
+                            <c:forEach items="${listEvents}" var="Event">
+                                <tr>
+                                    <td>${Event.eventName}</td>
+                                    <td>${Event.eventStart}</td>
+                                    <td>${Event.eventEnd}</td>
+                                    <td>${Event.categoryId}</td>
+                                    <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
+                                    <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
 
-                <!-- Table -->
-                <table class="table col-md-12">
-                    <tr>
-                        <th class="col-md-2">Event Name</th>
-                        <th class="col-md-2">Start Date</th>
-                        <th class="col-md-2">End Date</th>
-                        <th class="col-md-2">Category ID</th>
-                        <th class="col-md-2"></th>
-                        <th class="col-md-2"></th>
-                    </tr>
-                    <c:forEach items="${listEvents}" var="Event">
-                        <tr>
-                            <td>${Event.eventName}</td>
-                            <td>${Event.eventStart}</td>
-                            <td>${Event.eventEnd}</td>
-                            <td>${Event.categoryId}</td>
-                            <td><a onclick="sureOrNot('<c:url value='/remove/${Event.eventId}' />');">Delete</a></td>
-                            <td><a href="<c:url value='/edit/${Event.eventId}' />" >Edit</a></td>
-                        </tr>
-                    </c:forEach>
-                </table>
                 </c:if>
             </div>
-
+            </div>
 
             </div>
         </div>

@@ -1,0 +1,24 @@
+--> Packages und Definition der Klassen siehe Javadoc unter /documentation/javadoc
+
+zu 2.1.2
+Für die verbleibenden Altaktivitäten [...]
+	Kolision erfolgt wenn: 
+	startzeit alt >= startzeit neu UND endzeit alt <= endzeit neu
+	startzeit alt <= startzeit neu UND endzeit alt >= endzeit neu
+	endzeit alt   >= startzeit alt UND endzeit alt <= endzeit neu
+	startzeit alt >= startzeit neu UND startzeit alt <= endzeit alt
+
+zudem muss bei dem Update zugehörigen Laden der bestehenden Daten aus der Datenbank Sorge getragen werden, dass der zu bearbeitende Datensatz nicht in der Vergleichsliste steht, sonst besteht ein hohes Risiko für eine Kollision der Daten.
+
+zu 3.1
+[...] zum Einsatz kommen. Das Framework stellt verschiedene Grundfunktionalitäten zur Verfügung, die der Entwickler auf den gegebenen Anwendungsfall anpasst. Die bereitgestellten Programmteile sind im Regelfall von hoher Qualität, was u.a. die Vermeidung Programmfehlern bei Auftreten von im Entwurf nicht bedachten Grenzfällen begünstigt. Entsprechende Sachkenntnis vorausgesetzt, verkürzt die Nutzung von Frameworks die Entwicklungszeit, und fokussiert in der Implementierung auf die anwendungsfallspezifischen Aufgaben.
+[...] das meist genutzte Framework dar. Entscheidungskriterien waren hier eine leichte Erlernbarkeit, Kompatibilität zu den anderen verwendeten Komponenten und der MVC-Struktur, und zukünftige Nutzbarkeit der zu erwerbenden Fachkompetenz.
+
+Laut Aufgabenstellung hat die Realisierung des Projektes in Java zu erfolgen. Unterstützend haben wir einige Funktionalitäten, wie das Formatieren von Eingabefeldern in JavaScript realisiert, weiterhin erweitern wir die Schnittstelle zur Java-Applikation durch die Verwendung von JSTL-Tags. Die Nutzung dieser Techniken gestaltet die Anzeige bzw. Strukturierung der Applikationsdaten deutlich dynamischer.
+
+Für die Formatierung der Ausgabe auf Basis von JSP Dokumenten benutzen wir das CSS_Framework Bootstrap, dass aufbauend auf der CSS-Erweiterungen LESS bzw. SASS aktuell den Quasi-Standard für diesen Anwendungsbereich darstellt. Über die Einbindung von CSS-Klassen in die Markup-Elemente ermöglicht Bootstrap die einheitliches Darstellung sämtlicher Teilbereiche der Applikation.
+
+zu 3.2
+
+
+

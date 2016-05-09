@@ -1,19 +1,16 @@
 package com.calendarba.service;
 
-/**
- * Created by Andreas Geißler on 06.05.2016.
- */
-    import java.text.ParseException;
-    import java.util.*;
-
-    import org.springframework.format.annotation.DateTimeFormat;
-    import org.xml.sax.Attributes;
-    import org.xml.sax.SAXException;
-    import org.xml.sax.helpers.DefaultHandler;
     import com.calendarba.model.Event;
-    import com.calendarba.model.Category;
-    import java.util.Date;
-    import java.text.SimpleDateFormat;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
     public class EventXMLHandler extends DefaultHandler {
 
