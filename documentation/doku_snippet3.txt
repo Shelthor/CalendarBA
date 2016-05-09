@@ -1,0 +1,8 @@
+Hibernate
+
+Für die Persistierung und das zugehörige Mapping der Java-Objekte zur Laufzeit (ORM - Object Relational Mapping) wurde das Framework Hibernate eingesetzt. 
+Dieses nutzt eine Schichtenarchitektur um ein größtmögliches Maß an Modularität zu erreichen, und eine Kapselung der Datenbank zu gewährleisten (Abbildung hier) 
+Die unterste Schicht, der Data Access Layer, wird hier repräsentiert durch das Interface EventDAO und dessen Implementierung EventDAOImpl. Sie dient der 
+Bereitstellung der Datenbankfunktionalitäten ohne Details der Datenbank offen zu legen, womit die Datenquelle theoretisch ohne Änderung des Programmcodes getauscht 
+werden könnte. Dies entspricht dem Entwurfsmuster Data Access Object. Der darüber liegende Service Layer (EventService bzw. EventServiceImpl) hat die mögliche 
+Anbindung aus anderen Services zum Ziel, und erhöht die Erweiterbarkeit des Programmes. Er verbindet den DAL mit dem Model.
